@@ -1,0 +1,67 @@
+
+JuceLibraryCode/ReadMe.txt
+JuceLibraryCode/JuceHeader.h
+JuceLibraryCode/include_juce_opengl.mm
+JuceLibraryCode/include_juce_opengl.cpp
+JuceLibraryCode/include_juce_gui_extra.mm
+JuceLibraryCode/include_juce_gui_extra.cpp
+JuceLibraryCode/include_juce_gui_basics.mm
+JuceLibraryCode/include_juce_gui_basics.cpp
+JuceLibraryCode/include_juce_graphics.mm
+JuceLibraryCode/include_juce_graphics.cpp
+JuceLibraryCode/include_juce_events.mm
+JuceLibraryCode/include_juce_events.cpp
+JuceLibraryCode/include_juce_data_structures.mm
+JuceLibraryCode/include_juce_data_structures.cpp
+JuceLibraryCode/include_juce_cryptography.mm
+JuceLibraryCode/include_juce_cryptography.cpp
+JuceLibraryCode/include_juce_core.mm
+JuceLibraryCode/include_juce_core.cpp
+JuceLibraryCode/include_juce_audio_processors.mm
+JuceLibraryCode/include_juce_audio_processors.cpp
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/CL.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/Juce Dials_App.lastbuildstate
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/link.command.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/link.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/link.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/rc.command.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/rc.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/rc.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Main.obj
+Builds/VisualStudio2019/x64/Debug/App/MainComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/resources.res
+Builds/VisualStudio2019/x64/Debug/App/vc142.pdb
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/CL.command.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/CL.18444.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.log
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials.pdb
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials.ilk
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials.exe
+Builds/VisualStudio2019/x64/Debug/App/include_juce_opengl.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_gui_extra.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_gui_basics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_graphics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_events.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_data_structures.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_cryptography.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_core.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_formats.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_devices.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_basics.obj
+Builds/VisualStudio2019/resources.rc
+Builds/VisualStudio2019/Juce Dials_App.vcxproj.user
+Builds/VisualStudio2019/Juce Dials_App.vcxproj.filters
+Builds/VisualStudio2019/Juce Dials_App.vcxproj
+Builds/VisualStudio2019/Juce Dials.sln
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/45753dd4ecac4c0e/MAIN.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/26bcbb15456d8de9/MAINCOMPONENT.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/Browse.VC.opendb
+Builds/VisualStudio2019/.vs/Juce Dials/v16/Browse.VC.db
+Builds/VisualStudio2019/.vs/Juce Dials/v16/.suo
+JuceLibraryCode/include_juce_audio_formats.mm
+JuceLibraryCode/include_juce_audio_formats.cpp
+JuceLibraryCode/include_juce_audio_devices.mm
+JuceLibraryCode/include_juce_audio_devices.cpp
+JuceLibraryCode/include_juce_audio_basics.mm
+JuceLibraryCode/include_juce_audio_basics.cpp
