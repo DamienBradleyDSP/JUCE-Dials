@@ -11,12 +11,14 @@
 //==============================================================================
 MainComponent::MainComponent()
 {
-    setSize (600, 400);
+    setSize (800, 800);
 
 	setLookAndFeel(&mylookfeel);
 
 	myslider.setSliderStyle(Slider::SliderStyle::RotaryHorizontalVerticalDrag);
 	addAndMakeVisible(myslider);
+
+	
 
 }
 
@@ -30,7 +32,7 @@ void MainComponent::paint (Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     
-	g.fillAll(Colour::fromRGB(0, 0, 0));
+	g.fillAll(Colour::fromRGB(34,34,34));
 	
 }
 
@@ -40,7 +42,7 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
 
-	myslider.setBounds(getBounds());
+	myslider.setBounds(getBounds().reduced(50));
 
 
 }

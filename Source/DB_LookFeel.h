@@ -28,7 +28,13 @@ public:
 		float sliderPosProportional, float rotaryStartAngle,
 		float rotaryEndAngle, Slider& slider) override;
 
+	void drawLabel(Graphics& g, Label& l) override;
+
 private:
+
+	Colour grey;
+	Colour light_grey;
+	Colour dark_grey;
 	
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DB_LookFeel)
