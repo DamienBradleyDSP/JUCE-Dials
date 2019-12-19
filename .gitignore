@@ -65,3 +65,8 @@ JuceLibraryCode/include_juce_audio_devices.mm
 JuceLibraryCode/include_juce_audio_devices.cpp
 JuceLibraryCode/include_juce_audio_basics.mm
 JuceLibraryCode/include_juce_audio_basics.cpp
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/link.19360.delete.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/CL.17412.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/DB_Knob.obj
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/a4b1badf7d9ea00b/INCLUDE_JUCE_GRAPHICS.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/4804349a191a73b4/DB_KNOB.ipch

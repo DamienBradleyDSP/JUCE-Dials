@@ -9,6 +9,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "DB_Knob.h"
 
 //==============================================================================
 /*
@@ -29,6 +30,8 @@ public:
 private:
     //==============================================================================
     // Your private member variables go here...
+
+	DB_Knob knob_test;
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
