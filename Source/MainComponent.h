@@ -9,13 +9,14 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "DB_Knob.h"
+#include "DB_LookFeel.h"
 
 //==============================================================================
 /*
     This component lives inside our window, and this is where you should put all
     your controls and content.
 */
+
 class MainComponent   : public Component
 {
 public:
@@ -31,7 +32,9 @@ private:
     //==============================================================================
     // Your private member variables go here...
 
-	DB_Knob knob_test;
+	DB_LookFeel mylookfeel;
+
+	Slider myslider;
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
