@@ -9,7 +9,7 @@
 #include "MainComponent.h"
 
 //==============================================================================
-MainComponent::MainComponent() : bounds(0, 0, 800, 800)
+MainComponent::MainComponent() : bounds(300, 200, 200, 200)
 {
     setSize (800, 800);
 

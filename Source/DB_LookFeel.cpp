@@ -145,26 +145,48 @@ Slider::SliderLayout DB_LookFeel::getSliderLayout(Slider& slider)
 void DB_LookFeel::drawToggleButton(Graphics& g, ToggleButton& button,
 	bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
 {
-	auto fontSize = jmin(15.0f, button.getHeight() * 0.75f);
-	auto tickWidth = fontSize * 1.1f;
 
-	drawTickBox(g, button, 4.0f, (button.getHeight() - tickWidth) * 0.5f,
-		tickWidth, tickWidth,
-		button.getToggleState(),
-		button.isEnabled(),
-		shouldDrawButtonAsHighlighted,
-		shouldDrawButtonAsDown);
+	auto bounds = button.getLocalBounds().toFloat();
+	auto scale_value = bounds.getHeight();
 
-	g.setColour(button.findColour(ToggleButton::textColourId));
-	g.setFont(fontSize);
+	g.setColour(dark_grey);
+	g.fillRoundedRectangle(bounds, scale_value / 7.5);
 
-	//if (!button.isEnabled())
-		//g.setOpacity(0.5f);
+	g.setColour(light_grey);
+	g.fillRoundedRectangle(bounds.reduced(scale_value / 16.0), scale_value / 7.5);
 
-	g.drawFittedText(button.getButtonText(),
-		button.getLocalBounds().withTrimmedLeft(roundToInt(tickWidth) + 10)
-		.withTrimmedRight(2),
-		Justification::centredLeft, 10);
+
+	if (button.getToggleState())
+	{
+		g.setColour(grey);
+		g.fillRoundedRectangle(bounds.reduced(scale_value / 11.0), scale_value / 7.5);
+
+	}
+
+	if (!button.getToggleState())
+	{
+		if (button.isMouseOver())
+		{
+			if (!button.isMouseButtonDown())
+			{
+				g.setColour(grey);
+				g.fillRoundedRectangle(bounds.reduced(scale_value / 4.0), scale_value / 7.5);
+			}
+			if (button.isMouseButtonDown())
+			{
+				g.setColour(grey);
+				g.fillRoundedRectangle(bounds.reduced(scale_value / 3.5), scale_value / 5.5);
+			}
+		}
+
+		
+	}
+
+	
+
+	
+
+	
 
 }
 
@@ -189,6 +211,35 @@ void DB_LookFeel::drawTickBox(Graphics& g, Component& component, float x, float 
 
 
 /*
+
+auto fontSize = jmin(15.0f, button.getHeight() * 0.75f);
+	auto tickWidth = fontSize * 1.1f;
+
+	drawTickBox(g, button, 4.0f, (button.getHeight() - tickWidth) * 0.5f,
+		tickWidth, tickWidth,
+		button.getToggleState(),
+		button.isEnabled(),
+		shouldDrawButtonAsHighlighted,
+		shouldDrawButtonAsDown);
+
+	g.setColour(button.findColour(ToggleButton::textColourId));
+	g.setFont(fontSize);
+
+	//if (!button.isEnabled())
+		//g.setOpacity(0.5f);
+
+	g.drawFittedText(button.getButtonText(),
+		button.getLocalBounds().withTrimmedLeft(roundToInt(tickWidth) + 10)
+		.withTrimmedRight(2),
+		Justification::centredLeft, 10);
+
+
+		///////////////////////////////////
+
+
+
+
+
 //auto fontSize = jmin(15.0f, button.getHeight() * 0.75f);
 	//auto tickWidth = fontSize * 1.1f;
 
