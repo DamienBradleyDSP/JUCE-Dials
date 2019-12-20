@@ -32,6 +32,16 @@ public:
 
 	Slider::SliderLayout getSliderLayout(Slider&) override;
 
+	void drawToggleButton(Graphics&, ToggleButton&,
+		bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
+
+	void drawTickBox(Graphics& g, Component& component,
+		float x, float y, float w, float h,
+		const bool ticked,
+		const bool isEnabled,
+		const bool shouldDrawButtonAsHighlighted,
+		const bool shouldDrawButtonAsDown) override;
+
 private:
 
 	Colour grey;
@@ -39,7 +49,7 @@ private:
 	Colour dark_grey;
 
 	Font text;
-	Typeface::Ptr tface = Typeface::createSystemTypefaceFor(BinaryData::MontserratRegular_ttf, BinaryData::MontserratRegular_ttfSize);
+	Typeface::Ptr tface = Typeface::createSystemTypefaceFor(BinaryData::MyriadProRegular_otf, BinaryData::MyriadProRegular_otfSize);
 	
 	
 

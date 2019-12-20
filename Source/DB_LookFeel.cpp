@@ -25,7 +25,6 @@ DB_LookFeel::~DB_LookFeel()
 
 
 
-
 void DB_LookFeel::drawRotarySlider(Graphics& g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider& slider)
 {
 
@@ -44,7 +43,7 @@ void DB_LookFeel::drawRotarySlider(Graphics& g, int x, int y, int width, int hei
 	auto bottom_edge = y+bounds.getHeight();
 	auto bottom_length = height-bottom_edge;
 	auto bottom_halved = bottom_length / 2;
-	bounds.setPosition(x, y + bottom_halved);
+	bounds.setPosition(0, 0);
 
 	// Setting Scaling Values
 
@@ -57,7 +56,7 @@ void DB_LookFeel::drawRotarySlider(Graphics& g, int x, int y, int width, int hei
 	// Creating Gradient
 
 	Point<float> p1(bounds.getCentre());
-	Point<float> p2(key_arc.getTopLeft());
+	Point<float> p2(key_arc.reduced(scaling_val / 19.0).getTopLeft());
 	ColourGradient black_fade(Colours::black, p1,grey, p2, true); // move this
 
 	g.setGradientFill(black_fade);
@@ -106,21 +105,17 @@ void DB_LookFeel::drawRotarySlider(Graphics& g, int x, int y, int width, int hei
 void DB_LookFeel::drawLabel(Graphics& g, Label& label)
 {
 	//g.fillAll(label.findColour(Label::backgroundColourId));
-	/*
+	
 	if (!label.isBeingEdited())
 	{
-		auto alpha = label.isEnabled() ? 1.0f : 0.5f;
 
-		g.setColour(label.findColour(Label::textColourId).withMultipliedAlpha(alpha));
-		g.setFont();
+		g.setColour(light_grey);
 
-		auto textArea = getLabelBorderSize(label).subtractedFrom(label.getLocalBounds());
+		auto area = label.getLocalBounds();
 
-		g.drawFittedText(label.getText(), textArea, label.getJustificationType(),
-			jmax(1, (int)(textArea.getHeight() / text.getHeight())),
-			label.getMinimumHorizontalScale());
+		g.setFont(label.getHeight()/2.0);
+		g.drawFittedText(label.getText(), area, label.getJustificationType(),1,0);
 
-		g.setColour(label.findColour(Label::outlineColourId).withMultipliedAlpha(alpha));
 	}
 	else if (label.isEnabled())
 	{
@@ -129,7 +124,7 @@ void DB_LookFeel::drawLabel(Graphics& g, Label& label)
 
 	//g.drawRect(label.getLocalBounds());
 
-	*/
+	
 
 	
 }
@@ -146,3 +141,84 @@ Slider::SliderLayout DB_LookFeel::getSliderLayout(Slider& slider)
 
 	return layout;
 }
+
+void DB_LookFeel::drawToggleButton(Graphics& g, ToggleButton& button,
+	bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
+{
+	auto fontSize = jmin(15.0f, button.getHeight() * 0.75f);
+	auto tickWidth = fontSize * 1.1f;
+
+	drawTickBox(g, button, 4.0f, (button.getHeight() - tickWidth) * 0.5f,
+		tickWidth, tickWidth,
+		button.getToggleState(),
+		button.isEnabled(),
+		shouldDrawButtonAsHighlighted,
+		shouldDrawButtonAsDown);
+
+	g.setColour(button.findColour(ToggleButton::textColourId));
+	g.setFont(fontSize);
+
+	//if (!button.isEnabled())
+		//g.setOpacity(0.5f);
+
+	g.drawFittedText(button.getButtonText(),
+		button.getLocalBounds().withTrimmedLeft(roundToInt(tickWidth) + 10)
+		.withTrimmedRight(2),
+		Justification::centredLeft, 10);
+
+}
+
+void DB_LookFeel::drawTickBox(Graphics& g, Component& component, float x, float y, float w, float h, const bool ticked, const bool isEnabled, const bool shouldDrawButtonAsHighlighted, const bool shouldDrawButtonAsDown)
+{
+
+	ignoreUnused(isEnabled, shouldDrawButtonAsHighlighted, shouldDrawButtonAsDown);
+
+	Rectangle<float> tickBounds(x, y, w, h);
+
+	g.setColour(component.findColour(ToggleButton::tickDisabledColourId));
+	g.drawRoundedRectangle(tickBounds, 4.0f, 1.0f);
+
+	if (ticked)
+	{
+		g.setColour(component.findColour(ToggleButton::tickColourId));
+		auto tick = getTickShape(0.75f);
+		g.fillPath(tick, tick.getTransformToScaleToFit(tickBounds.reduced(4, 5).toFloat(), false));
+	}
+
+}
+
+
+/*
+//auto fontSize = jmin(15.0f, button.getHeight() * 0.75f);
+	//auto tickWidth = fontSize * 1.1f;
+
+	auto bounds = button.getLocalBounds().toFloat();
+	auto scale_value = bounds.getHeight();
+
+	g.setColour(dark_grey);
+	g.fillRoundedRectangle(bounds,scale_value/7.5);
+
+	g.setColour(light_grey);
+	g.fillRoundedRectangle(bounds.reduced(scale_value / 16.0), scale_value / 7.5);
+
+
+	if (button.isEnabled())
+	{
+		g.setColour(grey);
+		g.fillRoundedRectangle(bounds.reduced(scale_value / 18.0), scale_value / 7.5);
+	}
+	if (!button.isEnabled())
+	{
+		if (button.isMouseButtonDown())
+		{
+
+		}
+
+		if (button.isMouseOver())
+		{
+
+		}
+	}
+
+
+*/

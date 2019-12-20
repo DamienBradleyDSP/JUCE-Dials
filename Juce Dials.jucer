@@ -10,6 +10,8 @@
             file="Source/MainComponent.cpp"/>
       <FILE id="D6V8I4" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>
+    <FILE id="aA68Mu" name="MyriadPro-Regular.otf" compile="0" resource="1"
+          file="D:/Downloads/__ChromeDownloads/MyriadPro-Regular.otf"/>
   </MAINGROUP>
   <EXPORTFORMATS>
     <VS2019 targetFolder="Builds/VisualStudio2019">

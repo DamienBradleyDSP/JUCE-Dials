@@ -9,7 +9,7 @@
 #include "MainComponent.h"
 
 //==============================================================================
-MainComponent::MainComponent()
+MainComponent::MainComponent() : bounds(0, 0, 800, 800)
 {
     setSize (800, 800);
 
@@ -18,11 +18,18 @@ MainComponent::MainComponent()
 
 	auto button_width = 800;
 	auto button_height = 800;
-	myslider.setSliderStyle(Slider::SliderStyle::RotaryHorizontalVerticalDrag);
-	//myslider.setTextBoxStyle(Slider::TextBoxBelow,true,button_width/10,button_height/50);
-	addAndMakeVisible(myslider);
 
-	
+	myslider.setSliderStyle(Slider::SliderStyle::RotaryHorizontalVerticalDrag);
+	myslider.setTextBoxStyle(Slider::TextBoxRight, true, 10, 10);
+
+
+	//addAndMakeVisible(myslider);
+
+	addAndMakeVisible(mybutton);
+
+	mybutton.setEnabled(true);
+	mybutton.setClickingTogglesState(true);
+
 	
 
 }
@@ -38,6 +45,8 @@ void MainComponent::paint (Graphics& g)
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     
 	g.fillAll(Colour::fromRGB(34,34,34));
+
+	//g.fillRect(bounds);
 	
 }
 
@@ -47,7 +56,9 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
 
-	myslider.setBounds(getBounds());
+	myslider.setBounds(bounds);
+	mybutton.setBounds(bounds.reduced(30));
+	//myslider.setBounds(getLocalBounds());
 
 
 }
