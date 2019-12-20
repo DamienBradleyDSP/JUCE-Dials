@@ -15,9 +15,14 @@ MainComponent::MainComponent()
 
 	setLookAndFeel(&mylookfeel);
 
+
+	auto button_width = 800;
+	auto button_height = 800;
 	myslider.setSliderStyle(Slider::SliderStyle::RotaryHorizontalVerticalDrag);
+	//myslider.setTextBoxStyle(Slider::TextBoxBelow,true,button_width/10,button_height/50);
 	addAndMakeVisible(myslider);
 
+	
 	
 
 }
@@ -42,7 +47,7 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
 
-	myslider.setBounds(getBounds().reduced(50));
+	myslider.setBounds(getBounds());
 
 
 }
