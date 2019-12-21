@@ -187,16 +187,19 @@ void DB_LookFeel::drawToggleButton(Graphics& g, ToggleButton& button,
 void DB_LookFeel::drawComboBox(Graphics& g, int width, int height, bool,
 	int, int, int, int, ComboBox& box)
 {
+
+
 	auto cornerSize = box.findParentComponentOfClass<ChoicePropertyComponent>() != nullptr ? 0.0f : 3.0f;
-	Rectangle<int> boxBounds(0, 0, width, height);
+	auto bounds = box.getLocalBounds().toFloat();
+	auto scale_value = bounds.getHeight();
 
-	g.setColour(box.findColour(ComboBox::backgroundColourId));
-	g.fillRoundedRectangle(boxBounds.toFloat(), cornerSize);
+	g.setColour(dark_grey);
+	g.fillRoundedRectangle(bounds, scale_value / 5.5);
 
-	g.setColour(box.findColour(ComboBox::outlineColourId));
-	g.drawRoundedRectangle(boxBounds.toFloat().reduced(0.5f, 0.5f), cornerSize, 1.0f);
+	g.setColour(grey);
+	g.fillRoundedRectangle(bounds.reduced(scale_value / 15.0), scale_value / 5.5);
 
-	Rectangle<int> arrowZone(width - 30, 0, 20, height);
+	Rectangle<int> arrowZone(width - scale_value / 5.0, 0, 20, height);
 	Path path;
 	path.startNewSubPath(arrowZone.getX() + 3.0f, arrowZone.getCentreY() - 2.0f);
 	path.lineTo(static_cast<float> (arrowZone.getCentreX()), arrowZone.getCentreY() + 3.0f);
