@@ -17,6 +17,9 @@ DB_LookFeel::DB_LookFeel()
 {
 	setDefaultSansSerifTypeface(tface);
 
+	setColour(0, light_grey);
+	setColour(1, grey);
+	setColour(2, dark_grey);
 }
 
 DB_LookFeel::~DB_LookFeel()
@@ -58,14 +61,14 @@ void DB_LookFeel::drawRotarySlider(Graphics& g, int x, int y, int width, int hei
 
 	Point<float> p1(bounds.getCentre());
 	Point<float> p2(key_arc.reduced(scaling_val / 19.0).getTopLeft());
-	ColourGradient black_fade(Colours::black, p1, DB_Colours::grey, p2, true); // move this
+	ColourGradient black_fade(Colours::black, p1, grey, p2, true); // move this
 
 	g.setGradientFill(black_fade);
 	g.fillEllipse(bounds);
 
 	// Creating minute markers
 
-	g.setColour(DB_Colours::light_grey);
+	g.setColour(light_grey);
 
 	Point<float> circle_edge(minute_arc.getTopLeft().getX(), bounds.getCentreY()); // scale around to make full circle
 	circle_edge.applyTransform(AffineTransform::rotation(-2 * MathConstants<float>::pi * 40 / 360, bounds.getCentreX(), bounds.getCentreY()));
@@ -82,7 +85,7 @@ void DB_LookFeel::drawRotarySlider(Graphics& g, int x, int y, int width, int hei
 
 	// Creating knob face
 
-	g.setColour(DB_Colours::grey);
+	g.setColour(grey);
 	g.fillEllipse(key_arc);
 	
 
@@ -97,7 +100,7 @@ void DB_LookFeel::drawRotarySlider(Graphics& g, int x, int y, int width, int hei
 
 	Line<float> marker_line(LinesStartPoint, LineEndPoint);
 
-	g.setColour(DB_Colours::light_grey);
+	g.setColour(light_grey);
 	g.drawLine(marker_line, minute_marker_thickness*2);
 	
 
@@ -110,7 +113,7 @@ void DB_LookFeel::drawLabel(Graphics& g, Label& label)
 	if (!label.isBeingEdited())
 	{
 
-		g.setColour(DB_Colours::light_grey);
+		g.setColour(light_grey);
 
 		auto area = label.getLocalBounds();
 
@@ -150,16 +153,16 @@ void DB_LookFeel::drawToggleButton(Graphics& g, ToggleButton& button,
 	auto bounds = button.getLocalBounds().toFloat();
 	auto scale_value = bounds.getHeight();
 
-	g.setColour(DB_Colours::dark_grey);
+	g.setColour(dark_grey);
 	g.fillRoundedRectangle(bounds, scale_value / 7.5);
 
-	g.setColour(DB_Colours::light_grey);
+	g.setColour(light_grey);
 	g.fillRoundedRectangle(bounds.reduced(scale_value / 16.0), scale_value / 7.5);
 
 
 	if (button.getToggleState())
 	{
-		g.setColour(DB_Colours::grey);
+		g.setColour(grey);
 		g.fillRoundedRectangle(bounds.reduced(scale_value / 11.0), scale_value / 7.5);
 
 	}
@@ -170,12 +173,12 @@ void DB_LookFeel::drawToggleButton(Graphics& g, ToggleButton& button,
 		{
 			if (!button.isMouseButtonDown())
 			{
-				g.setColour(DB_Colours::grey);
+				g.setColour(grey);
 				g.fillRoundedRectangle(bounds.reduced(scale_value / 4.0), scale_value / 7.5);
 			}
 			if (button.isMouseButtonDown())
 			{
-				g.setColour(DB_Colours::grey);
+				g.setColour(grey);
 				g.fillRoundedRectangle(bounds.reduced(scale_value / 3.5), scale_value / 5.5);
 			}
 		}
@@ -194,10 +197,10 @@ void DB_LookFeel::drawComboBox(Graphics& g, int width, int height, bool,
 	auto bounds = box.getLocalBounds().toFloat();
 	auto scale_value = bounds.getHeight();
 
-	g.setColour(DB_Colours::dark_grey);
+	g.setColour(dark_grey);
 	g.fillRoundedRectangle(bounds, scale_value / 5.5);
 
-	g.setColour(DB_Colours::grey);
+	g.setColour(grey);
 	g.fillRoundedRectangle(bounds.reduced(scale_value / 15.0), scale_value / 5.5);
 
 	Rectangle<int> arrowZone(width - scale_value / 5.0, 0, 20, height);

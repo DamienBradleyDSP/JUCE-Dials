@@ -11,7 +11,6 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "DB_LookFeel.h"
 
 //==============================================================================
 /*
@@ -29,8 +28,6 @@ public:
 	void set_text(String header_text);
 
 private:
-
-	DB_LookFeel mylookfeel;
 
 	String header = " ";
 	

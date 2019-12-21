@@ -9,7 +9,7 @@
 #include "MainComponent.h"
 
 //==============================================================================
-MainComponent::MainComponent() : bounds(0, 0, 800, 200)
+MainComponent::MainComponent() : bounds(0, 0, 800, 800)
 {
     setSize (800, 800);
 
@@ -32,6 +32,7 @@ MainComponent::MainComponent() : bounds(0, 0, 800, 200)
 	addAndMakeVisible(headerbar);
 	headerbar.set_text("HEADER BAR");
 
+	//addAndMakeVisible(modulespace);
 	
 
 }
@@ -46,7 +47,7 @@ void MainComponent::paint (Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     
-	g.fillAll(Colour::fromRGB(34,34,34));
+	g.fillAll(mylookfeel.findColour(1));
 
 	//g.fillRect(bounds);
 	
@@ -62,6 +63,7 @@ void MainComponent::resized()
 	mybutton.setBounds(bounds.reduced(30));
 	mycombobox.setBounds(bounds);
 	headerbar.setBounds(bounds);
+	modulespace.setBounds(bounds);
 	//myslider.setBounds(getLocalBounds());
 
 

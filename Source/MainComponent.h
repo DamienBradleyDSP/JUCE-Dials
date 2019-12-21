@@ -11,6 +11,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "DB_LookFeel.h"
 #include "HeaderBar.h"
+#include "ModuleSpace.h"
 
 //==============================================================================
 /*
@@ -42,6 +43,8 @@ private:
 	ComboBox mycombobox;
 
 	HeaderBar headerbar;
+
+	ModuleSpace modulespace;
 	
 	Rectangle<int> bounds;
 
