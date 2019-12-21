@@ -35,12 +35,10 @@ public:
 	void drawToggleButton(Graphics&, ToggleButton&,
 		bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
 
-	void drawTickBox(Graphics& g, Component& component,
-		float x, float y, float w, float h,
-		const bool ticked,
-		const bool isEnabled,
-		const bool shouldDrawButtonAsHighlighted,
-		const bool shouldDrawButtonAsDown) override;
+	void drawComboBox(Graphics&, int width, int height, bool isButtonDown,
+		int buttonX, int buttonY, int buttonW, int buttonH,
+		ComboBox&) override;
+
 
 private:
 

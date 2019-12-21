@@ -182,94 +182,27 @@ void DB_LookFeel::drawToggleButton(Graphics& g, ToggleButton& button,
 		
 	}
 
-	
-
-	
-
-	
-
 }
 
-void DB_LookFeel::drawTickBox(Graphics& g, Component& component, float x, float y, float w, float h, const bool ticked, const bool isEnabled, const bool shouldDrawButtonAsHighlighted, const bool shouldDrawButtonAsDown)
+void DB_LookFeel::drawComboBox(Graphics& g, int width, int height, bool,
+	int, int, int, int, ComboBox& box)
 {
+	auto cornerSize = box.findParentComponentOfClass<ChoicePropertyComponent>() != nullptr ? 0.0f : 3.0f;
+	Rectangle<int> boxBounds(0, 0, width, height);
 
-	ignoreUnused(isEnabled, shouldDrawButtonAsHighlighted, shouldDrawButtonAsDown);
+	g.setColour(box.findColour(ComboBox::backgroundColourId));
+	g.fillRoundedRectangle(boxBounds.toFloat(), cornerSize);
 
-	Rectangle<float> tickBounds(x, y, w, h);
+	g.setColour(box.findColour(ComboBox::outlineColourId));
+	g.drawRoundedRectangle(boxBounds.toFloat().reduced(0.5f, 0.5f), cornerSize, 1.0f);
 
-	g.setColour(component.findColour(ToggleButton::tickDisabledColourId));
-	g.drawRoundedRectangle(tickBounds, 4.0f, 1.0f);
+	Rectangle<int> arrowZone(width - 30, 0, 20, height);
+	Path path;
+	path.startNewSubPath(arrowZone.getX() + 3.0f, arrowZone.getCentreY() - 2.0f);
+	path.lineTo(static_cast<float> (arrowZone.getCentreX()), arrowZone.getCentreY() + 3.0f);
+	path.lineTo(arrowZone.getRight() - 3.0f, arrowZone.getCentreY() - 2.0f);
 
-	if (ticked)
-	{
-		g.setColour(component.findColour(ToggleButton::tickColourId));
-		auto tick = getTickShape(0.75f);
-		g.fillPath(tick, tick.getTransformToScaleToFit(tickBounds.reduced(4, 5).toFloat(), false));
-	}
-
+	g.setColour(box.findColour(ComboBox::arrowColourId).withAlpha((box.isEnabled() ? 0.9f : 0.2f)));
+	g.strokePath(path, PathStrokeType(2.0f));
 }
 
-
-/*
-
-auto fontSize = jmin(15.0f, button.getHeight() * 0.75f);
-	auto tickWidth = fontSize * 1.1f;
-
-	drawTickBox(g, button, 4.0f, (button.getHeight() - tickWidth) * 0.5f,
-		tickWidth, tickWidth,
-		button.getToggleState(),
-		button.isEnabled(),
-		shouldDrawButtonAsHighlighted,
-		shouldDrawButtonAsDown);
-
-	g.setColour(button.findColour(ToggleButton::textColourId));
-	g.setFont(fontSize);
-
-	//if (!button.isEnabled())
-		//g.setOpacity(0.5f);
-
-	g.drawFittedText(button.getButtonText(),
-		button.getLocalBounds().withTrimmedLeft(roundToInt(tickWidth) + 10)
-		.withTrimmedRight(2),
-		Justification::centredLeft, 10);
-
-
-		///////////////////////////////////
-
-
-
-
-
-//auto fontSize = jmin(15.0f, button.getHeight() * 0.75f);
-	//auto tickWidth = fontSize * 1.1f;
-
-	auto bounds = button.getLocalBounds().toFloat();
-	auto scale_value = bounds.getHeight();
-
-	g.setColour(dark_grey);
-	g.fillRoundedRectangle(bounds,scale_value/7.5);
-
-	g.setColour(light_grey);
-	g.fillRoundedRectangle(bounds.reduced(scale_value / 16.0), scale_value / 7.5);
-
-
-	if (button.isEnabled())
-	{
-		g.setColour(grey);
-		g.fillRoundedRectangle(bounds.reduced(scale_value / 18.0), scale_value / 7.5);
-	}
-	if (!button.isEnabled())
-	{
-		if (button.isMouseButtonDown())
-		{
-
-		}
-
-		if (button.isMouseOver())
-		{
-
-		}
-	}
-
-
-*/
