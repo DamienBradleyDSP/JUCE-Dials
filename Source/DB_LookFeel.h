@@ -40,13 +40,13 @@ public:
 		ComboBox&) override;
 
 
-private:
-
 	Colour grey;
 	Colour light_grey;
 	Colour dark_grey;
-
 	Font text;
+
+private:
+
 	Typeface::Ptr tface = Typeface::createSystemTypefaceFor(BinaryData::MyriadProRegular_otf, BinaryData::MyriadProRegular_otfSize);
 	
 	

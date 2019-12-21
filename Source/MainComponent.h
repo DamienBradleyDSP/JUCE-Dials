@@ -10,6 +10,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "DB_LookFeel.h"
+#include "HeaderBar.h"
 
 //==============================================================================
 /*
@@ -40,6 +41,8 @@ private:
 
 	ComboBox mycombobox;
 
+	HeaderBar headerbar;
+	
 	Rectangle<int> bounds;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)

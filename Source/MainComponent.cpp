@@ -9,7 +9,7 @@
 #include "MainComponent.h"
 
 //==============================================================================
-MainComponent::MainComponent() : bounds(0, 0, 500, 200)
+MainComponent::MainComponent() : bounds(0, 0, 800, 200)
 {
     setSize (800, 800);
 
@@ -27,8 +27,10 @@ MainComponent::MainComponent() : bounds(0, 0, 500, 200)
 
 	//addAndMakeVisible(mybutton);
 
-	addAndMakeVisible(mycombobox);
+	//addAndMakeVisible(mycombobox);
 
+	addAndMakeVisible(headerbar);
+	headerbar.set_text("HEADER BAR");
 
 	
 
@@ -59,6 +61,7 @@ void MainComponent::resized()
 	myslider.setBounds(bounds);
 	mybutton.setBounds(bounds.reduced(30));
 	mycombobox.setBounds(bounds);
+	headerbar.setBounds(bounds);
 	//myslider.setBounds(getLocalBounds());
 
 
