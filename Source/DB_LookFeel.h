@@ -16,6 +16,10 @@
 /*
 */
 
+namespace DB_Colours
+{
+	
+}
 class DB_LookFeel    : public LookAndFeel_V4
 {
 public:
@@ -39,13 +43,20 @@ public:
 		int buttonX, int buttonY, int buttonW, int buttonH,
 		ComboBox&) override;
 
-
-	Colour grey;
-	Colour light_grey;
-	Colour dark_grey;
-	Font text;
+	enum DB_Colours
+	{
+		light_grey = 0x1000b00, 
+		grey = 0x1000a00,  
+		dark_grey = 0x1000c00, 
+	};
+	
+	Colour grey(34, 34, 34);
+	Colour light_grey(136, 136, 136);
+	Colour dark_grey(25, 25, 25);
+	
 
 private:
+
 
 	Typeface::Ptr tface = Typeface::createSystemTypefaceFor(BinaryData::MyriadProRegular_otf, BinaryData::MyriadProRegular_otfSize);
 	

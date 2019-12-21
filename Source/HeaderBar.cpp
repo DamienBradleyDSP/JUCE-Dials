@@ -47,9 +47,9 @@ void HeaderBar::paint (Graphics& g)
 
 	Rectangle<int> header_bounds(0, 0, getLocalBounds().getWidth(), 90);
 
-    g.fillAll (mylookfeel.grey);
+    g.fillAll (DB_Colours::grey);
     
-	g.setColour(mylookfeel.dark_grey);
+	g.setColour(DB_Colours::dark_grey);
 
 	auto bottom_bar = header_bounds.removeFromBottom(20);
 	g.fillRect(bottom_bar);
@@ -60,7 +60,7 @@ void HeaderBar::paint (Graphics& g)
 
 	g.drawText(header,text_bounds,Justification::centredLeft);
 
-	g.setColour(mylookfeel.grey);
+	g.setColour(DB_Colours::grey);
 	g.setFont(14);
 
 	auto left_text = bottom_bar;
