@@ -15,9 +15,6 @@
 HeaderBar::HeaderBar()
 {
 
-	
-
-
 }
 HeaderBar::HeaderBar(String my_text)
 {

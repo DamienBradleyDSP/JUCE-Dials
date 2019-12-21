@@ -25,22 +25,16 @@ ModuleSpace::~ModuleSpace()
 
 void ModuleSpace::paint (Graphics& g)
 {
-    /* This demo code just fills the component's background and
-       draws some placeholder text to get you started.
+	Colour light_grey = findColour(0, true);
+	Colour grey = findColour(1, true);
+	Colour dark_grey = findColour(2, true);
 
-       You should replace everything in this method with your own
-       drawing code..
-    */
+	auto bounds = getLocalBounds().toFloat();
+	auto scaling_val = bounds.getHeight();
 
-    g.fillAll (Colours::grey);   // clear the background
+	g.setColour(dark_grey);
+	g.fillRoundedRectangle(bounds,scaling_val/10.0);
 
-    g.setColour (Colours::grey);
-    g.drawRect (getLocalBounds(), 1);   // draw an outline around the component
-
-    g.setColour (Colours::white);
-    g.setFont (14.0f);
-    g.drawText ("ModuleSpace", getLocalBounds(),
-                Justification::centred, true);   // draw some placeholder text
 }
 
 void ModuleSpace::resized()

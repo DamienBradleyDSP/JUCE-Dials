@@ -29,10 +29,10 @@ MainComponent::MainComponent() : bounds(0, 0, 800, 800)
 
 	//addAndMakeVisible(mycombobox);
 
-	addAndMakeVisible(headerbar);
+	//addAndMakeVisible(headerbar);
 	headerbar.set_text("HEADER BAR");
 
-	//addAndMakeVisible(modulespace);
+	addAndMakeVisible(modulespace);
 	
 
 }
@@ -64,7 +64,6 @@ void MainComponent::resized()
 	mycombobox.setBounds(bounds);
 	headerbar.setBounds(bounds);
 	modulespace.setBounds(bounds);
-	//myslider.setBounds(getLocalBounds());
 
 
 }
