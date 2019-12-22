@@ -9,7 +9,7 @@
 #include "MainComponent.h"
 
 //==============================================================================
-MainComponent::MainComponent() : bounds(0, 0, 800, 800)
+MainComponent::MainComponent() : bounds(30, 30, 400, 500)
 {
     setSize (800, 800);
 
@@ -33,6 +33,8 @@ MainComponent::MainComponent() : bounds(0, 0, 800, 800)
 	headerbar.set_text("HEADER BAR");
 
 	addAndMakeVisible(modulespace);
+
+	modulespace.set_text("SYNTHESISER");
 	
 
 }
