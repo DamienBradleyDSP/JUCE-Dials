@@ -35,6 +35,7 @@ MainComponent::MainComponent() : bounds(30, 30, 400, 500)
 	addAndMakeVisible(modulespace);
 
 	modulespace.set_text("SYNTHESISER");
+	modulespace.rotate(false, false);
 	
 
 }

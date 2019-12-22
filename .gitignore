@@ -113,3 +113,4 @@ Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/link-rc.read.1.tlog
 Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/link-cvtres.write.1.tlog
 Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/link-cvtres.read.1.tlog
 Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/dcb7ce52cedc0893/MODULESPACE.ipch
+*.tlog
