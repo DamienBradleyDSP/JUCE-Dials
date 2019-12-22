@@ -31,9 +31,21 @@ void ModuleSpace::paint (Graphics& g)
 
 	auto bounds = getLocalBounds().toFloat();
 	auto scaling_val = bounds.getHeight();
+	auto corner_size = 40;
 
 	g.setColour(dark_grey);
-	g.fillRoundedRectangle(bounds,scaling_val/10.0);
+	g.fillRoundedRectangle(bounds, corner_size);
+
+	
+	auto bottom_height = 50;
+	auto edited_bounds = bounds.reduced(5).removeFromTop(bounds.getHeight() - bottom_height);
+
+	g.setColour(grey);
+	g.fillRoundedRectangle(edited_bounds, corner_size);
+
+	g.setColour(dark_grey);
+	g.fillRect(edited_bounds.removeFromBottom(50));
+
 
 }
 
