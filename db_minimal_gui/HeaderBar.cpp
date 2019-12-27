@@ -72,6 +72,7 @@ private:
 
 	juce::String header = " ";
 
+	int bounds_value = 90; // 90 pixels depth
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(HeaderBar)
 };

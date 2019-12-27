@@ -219,8 +219,8 @@ public:
 
 private:
 
-	juce::Colour grey = juce::Colour::fromRGB(34, 34, 34);				//(34, 34, 34);
-	juce::Colour light_grey = juce::Colour::fromRGB(136, 136, 136);			//(136, 136, 136);
+	juce::Colour grey = juce::Colour::fromRGB(40, 40, 40);				//(34, 34, 34);
+	juce::Colour light_grey = juce::Colour::fromRGB(100, 100, 100);			//(136, 136, 136);
 	juce::Colour dark_grey = juce::Colour::fromRGB(25, 25, 25);			//(25, 25, 25);
 
 	//juce::Typeface::Ptr tface = juce::Typeface::createSystemTypefaceFor(db_BinaryData::DB_font, db_BinaryData::DB_fontSize);
