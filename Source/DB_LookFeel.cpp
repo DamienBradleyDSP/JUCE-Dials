@@ -11,8 +11,6 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "DB_LookFeel.h"
 
-//==============================================================================
-
 DB_LookFeel::DB_LookFeel()
 {
 	setDefaultSansSerifTypeface(tface);
