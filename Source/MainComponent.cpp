@@ -9,7 +9,7 @@
 #include "MainComponent.h"
 
 //==============================================================================
-MainComponent::MainComponent() : bounds(30, 30, 400, 500)
+MainComponent::MainComponent() : bounds(30, 30, 100, 50)
 {
     setSize (800, 800);
 
@@ -27,15 +27,18 @@ MainComponent::MainComponent() : bounds(30, 30, 400, 500)
 
 	//addAndMakeVisible(mybutton);
 
-	//addAndMakeVisible(mycombobox);
+	addAndMakeVisible(mycombobox);
 
 	//addAndMakeVisible(headerbar);
 	headerbar.set_text("HEADER BAR");
 
-	addAndMakeVisible(modulespace);
+	//addAndMakeVisible(modulespace);
 
 	modulespace.set_text("SYNTHESISER");
-	modulespace.rotate(false, false);
+	modulespace.set_rotation(false, false);
+
+	mycombobox.addItem("3",1);
+	mycombobox.setJustificationType(Justification::centred);
 	
 
 }

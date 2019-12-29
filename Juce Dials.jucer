@@ -3,12 +3,9 @@
 <JUCERPROJECT id="U5yz5J" name="Juce Dials" projectType="guiapp" jucerVersion="5.4.5">
   <MAINGROUP id="B7lQeX" name="Juce Dials">
     <GROUP id="{3E60B827-D885-62E7-E911-10CC58AB170C}" name="Source">
-      <FILE id="xrv0nI" name="ModuleSpace.cpp" compile="1" resource="0" file="Source/ModuleSpace.cpp"/>
-      <FILE id="vIlBv6" name="ModuleSpace.h" compile="0" resource="0" file="Source/ModuleSpace.h"/>
-      <FILE id="HMRYL7" name="HeaderBar.cpp" compile="1" resource="0" file="Source/HeaderBar.cpp"/>
-      <FILE id="ixZVqZ" name="HeaderBar.h" compile="0" resource="0" file="Source/HeaderBar.h"/>
-      <FILE id="CGpVDl" name="DB_LookFeel.cpp" compile="1" resource="0" file="Source/DB_LookFeel.cpp"/>
-      <FILE id="AJAqih" name="DB_LookFeel.h" compile="0" resource="0" file="Source/DB_LookFeel.h"/>
+      <FILE id="vIlBv6" name="ModuleSpace.cpp" compile="0" resource="0" file="Source/ModuleSpace.cpp"/>
+      <FILE id="ixZVqZ" name="HeaderBar.cpp" compile="0" resource="0" file="Source/HeaderBar.cpp"/>
+      <FILE id="AJAqih" name="DB_LookFeel.cpp" compile="0" resource="0" file="Source/DB_LookFeel.cpp"/>
       <FILE id="JqKbmw" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="HK9iiW" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>

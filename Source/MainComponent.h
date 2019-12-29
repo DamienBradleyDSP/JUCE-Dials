@@ -26,9 +26,9 @@ END_JUCE_MODULE_DECLARATION
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "DB_LookFeel.h"
-#include "HeaderBar.h"
-#include "ModuleSpace.h"
+#include "DB_LookFeel.cpp"
+#include "HeaderBar.cpp"
+#include "ModuleSpace.cpp"
 
 //==============================================================================
 /*
