@@ -1,12 +1,21 @@
+/*
+  ==============================================================================
+
+    ModuleSpace.h
+    Created: 21 Dec 2019 6:03:44pm
+    Author:  damob
+
+  ==============================================================================
+*/
 
 #pragma once
-
-namespace DB
-{
 
 //==============================================================================
 /*
 */
+
+namespace DB
+{
 
 class ModuleSpace : public juce::Component
 {
@@ -16,7 +25,7 @@ public:
 	{
 		module_text = text;
 	};
-	ModuleSpace::ModuleSpace(juce::String text, bool inverted, bool sideways)
+	ModuleSpace(juce::String text, bool inverted, bool sideways)
 	{
 		module_text = text;
 		inverted_flag = inverted;
@@ -24,7 +33,7 @@ public:
 	};
 	~ModuleSpace() {};
 
-	void ModuleSpace::paint(juce::Graphics& g) override
+	void paint(juce::Graphics& g) override
 	{
 		if (!inverted_flag && !sideways_flag)
 		{
@@ -34,14 +43,13 @@ public:
 
 			auto bounds = getLocalBounds().toFloat();
 			auto text_bounds = bounds;
-			auto scaling_val = bounds.getHeight();
-			auto corner_size = 25;
+			auto corner_size = 25.0f;
 
 			g.setColour(dark_grey);
 			g.fillRoundedRectangle(bounds, corner_size);
 
 
-			auto bottom_height = 25;
+			auto bottom_height = 25.0f;
 			auto edited_bounds = bounds.reduced(5).removeFromTop(bounds.getHeight() - bottom_height);
 
 			g.setColour(grey);
@@ -53,7 +61,7 @@ public:
 			g.setColour(grey);
 			//g.fillRect(text_bounds.removeFromBottom(bottom_height));
 			g.setFont(30);
-			g.drawText(module_text, text_bounds.removeFromBottom(bottom_height * 2.0), juce::Justification::centred, true);
+			g.drawText(module_text, text_bounds.removeFromBottom(bottom_height * 2.0f), juce::Justification::centred, true);
 		}
 
 		if (inverted_flag)
@@ -64,14 +72,13 @@ public:
 
 			auto bounds = getLocalBounds().toFloat();
 			auto text_bounds = bounds;
-			auto scaling_val = bounds.getHeight();
-			auto corner_size = 25;
+			auto corner_size = 25.0f;
 
 			g.setColour(dark_grey);
 			g.fillRoundedRectangle(bounds, corner_size);
 
 
-			auto top_height = 15;
+			auto top_height = 15.0f;
 			auto edited_bounds = bounds.reduced(5).removeFromBottom(bounds.getHeight() - top_height);
 
 			g.setColour(grey);
@@ -82,8 +89,8 @@ public:
 
 			g.setColour(grey);
 			//g.fillRect(text_bounds.removeFromBottom(bottom_height));
-			g.setFont(20);
-			g.drawText(module_text, text_bounds.removeFromTop(top_height * 1.6), juce::Justification::centred, true);
+			g.setFont(20.0f);
+			g.drawText(module_text, text_bounds.removeFromTop(top_height * 1.6f), juce::Justification::centred, true);
 		}
 		if (sideways_flag)
 		{
@@ -95,15 +102,14 @@ public:
 
 			auto bounds = getLocalBounds().toFloat();
 			auto text_bounds = bounds;
-			auto scaling_val = bounds.getHeight();
-			auto corner_size = 25;
+			auto corner_size = 25.0f;
 
 			g.setColour(dark_grey);
 			g.fillRoundedRectangle(bounds, corner_size);
 
 
-			auto side_width = 25;
-			auto edited_bounds = bounds.reduced(5).removeFromRight(bounds.getWidth() - side_width);
+			auto side_width = 25.0f;
+			auto edited_bounds = bounds.reduced(5.0f).removeFromRight(bounds.getWidth() - side_width);
 
 			g.setColour(grey);
 			g.fillRoundedRectangle(edited_bounds, corner_size);
@@ -112,19 +118,19 @@ public:
 			g.fillRect(edited_bounds.removeFromLeft(side_width));
 
 			g.setColour(light_grey);
-			g.setFont(30);
+			g.setFont(30.0f);
 			//g.drawText(module_text, text_bounds.removeFromTop(side_width), Justification::centred, true);
 
 		}
 
 	};
-	void ModuleSpace::resized() override {};
+	void resized() override {};
 
 	void set_text(juce::String text)
 	{
 		module_text = text;
 	};
-	void ModuleSpace::rotate(bool inverted, bool sideways)
+	void set_rotation(bool inverted, bool sideways)
 	{
 		inverted_flag = inverted;
 		sideways_flag = sideways;

@@ -10,24 +10,29 @@
 
 #pragma once
 
-namespace DB
-{
-
 //==============================================================================
 /*
 */
+
+namespace DB
+{
+
 class HeaderBar : public juce::Component
 {
 public:
 	HeaderBar() {};
-	HeaderBar(juce::String mytext) {
+	HeaderBar(juce::String my_text)
+	{
 
-		header = mytext;
+		header = my_text;
 
 	};
-	~HeaderBar() {};
+	~HeaderBar() {
+		setLookAndFeel(nullptr);
+	};
 
-	void paint(juce::Graphics& g) override {
+	void paint(juce::Graphics& g) override
+	{
 
 		juce::Colour light_grey = findColour(0, true);
 		juce::Colour grey = findColour(1, true);
@@ -41,7 +46,7 @@ public:
 		auto bottom_bar = header_bounds.removeFromBottom(20);
 		g.fillRect(bottom_bar);
 
-		g.setFont(45);
+		g.setFont(45.0f);
 		auto text_bounds = header_bounds;
 		text_bounds.removeFromLeft(40);
 
@@ -58,13 +63,14 @@ public:
 
 		g.drawText("db", left_text, juce::Justification::centredLeft);
 		g.drawText("db", right_text, juce::Justification::centredRight);
-		g.drawText("digital garden", bottom_bar, juce::Justification::centred);
+		//g.drawText("digital garden", bottom_bar, juce::Justification::centred);
 
 		//g.fillRect(text_bounds);
 	};
 	void resized() override {};
 
-	void set_text(juce::String header_text) {
+	void set_text(juce::String header_text)
+	{
 		header = header_text;
 	};
 
@@ -72,7 +78,6 @@ private:
 
 	juce::String header = " ";
 
-	int bounds_value = 90; // 90 pixels depth
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(HeaderBar)
 };

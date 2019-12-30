@@ -10,22 +10,22 @@
 
 #pragma once
 
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "DB_LookFeel.cpp"
-
 //==============================================================================
 /*
 */
 
-class ModuleSpace    : public juce::Component
+namespace DB
+{
+
+class ModuleSpace : public juce::Component
 {
 public:
 	ModuleSpace() {};
-    ModuleSpace(juce::String text)
+	ModuleSpace(juce::String text)
 	{
 		module_text = text;
 	};
-    ModuleSpace(juce::String text, bool inverted, bool sideways)
+	ModuleSpace(juce::String text, bool inverted, bool sideways)
 	{
 		module_text = text;
 		inverted_flag = inverted;
@@ -33,7 +33,7 @@ public:
 	};
 	~ModuleSpace() {};
 
-    void paint(juce::Graphics& g) override
+	void paint(juce::Graphics& g) override
 	{
 		if (!inverted_flag && !sideways_flag)
 		{
@@ -61,7 +61,7 @@ public:
 			g.setColour(grey);
 			//g.fillRect(text_bounds.removeFromBottom(bottom_height));
 			g.setFont(30);
-			g.drawText(module_text, text_bounds.removeFromBottom(bottom_height * 2.0f), Justification::centred, true);
+			g.drawText(module_text, text_bounds.removeFromBottom(bottom_height * 2.0f), juce::Justification::centred, true);
 		}
 
 		if (inverted_flag)
@@ -90,7 +90,7 @@ public:
 			g.setColour(grey);
 			//g.fillRect(text_bounds.removeFromBottom(bottom_height));
 			g.setFont(20.0f);
-			g.drawText(module_text, text_bounds.removeFromTop(top_height * 1.6f), Justification::centred, true);
+			g.drawText(module_text, text_bounds.removeFromTop(top_height * 1.6f), juce::Justification::centred, true);
 		}
 		if (sideways_flag)
 		{
@@ -144,5 +144,7 @@ private:
 	bool inverted_flag = false, sideways_flag = false;
 
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ModuleSpace)
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ModuleSpace)
 };
+
+}

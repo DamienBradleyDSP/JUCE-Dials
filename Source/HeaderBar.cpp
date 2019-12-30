@@ -10,26 +10,28 @@
 
 #pragma once
 
-#include "../JuceLibraryCode/JuceHeader.h"
-
 //==============================================================================
 /*
 */
-class HeaderBar    : public juce::Component
+
+namespace DB
+{
+
+class HeaderBar : public juce::Component
 {
 public:
 	HeaderBar() {};
-    HeaderBar(juce::String my_text)
+	HeaderBar(juce::String my_text)
 	{
 
 		header = my_text;
 
 	};
-    ~HeaderBar() {
+	~HeaderBar() {
 		setLookAndFeel(nullptr);
 	};
 
-    void paint(juce::Graphics& g) override
+	void paint(juce::Graphics& g) override
 	{
 
 		juce::Colour light_grey = findColour(0, true);
@@ -75,7 +77,9 @@ public:
 private:
 
 	juce::String header = " ";
-	
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (HeaderBar)
+
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(HeaderBar)
 };
+
+}

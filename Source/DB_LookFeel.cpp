@@ -10,13 +10,14 @@
 
 #pragma once
 
-#include "../JuceLibraryCode/JuceHeader.h"
-
 //==============================================================================
 /*
 */
 
-class DB_LookFeel    : public juce::LookAndFeel_V4
+namespace DB
+{
+
+class DB_LookFeel : public juce::LookAndFeel_V4
 {
 public:
 
@@ -30,7 +31,7 @@ public:
 	};
 
 	~DB_LookFeel() {};
-	
+
 	void drawRotarySlider(juce::Graphics& g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, juce::Slider&) override
 	{
 
@@ -44,7 +45,7 @@ public:
 
 		// Setting the inner square where the knob will sit
 
-		bounds = bounds.constrainedWithin(juce::Rectangle<int>(x, y, jmin(width, height), jmin(width, height)).toFloat());
+		bounds = bounds.constrainedWithin(juce::Rectangle<int>(x, y, juce::jmin(width, height), juce::jmin(width, height)).toFloat());
 		bounds.setPosition(0, 0);
 
 		// Setting Scaling Values
@@ -135,7 +136,7 @@ public:
 
 	};
 
-	Slider::SliderLayout getSliderLayout(juce::Slider& slider) override
+	juce::Slider::SliderLayout getSliderLayout(juce::Slider& slider) override
 	{
 
 		// Override isnt working, look for V2
@@ -149,7 +150,7 @@ public:
 	};
 
 	void drawToggleButton(juce::Graphics& g, juce::ToggleButton& button,
-		bool , bool ) override
+		bool, bool) override
 	{
 
 		auto bounds = button.getLocalBounds().toFloat();
@@ -195,7 +196,7 @@ public:
 	{
 
 
-		
+
 		auto bounds = box.getLocalBounds().toFloat();
 		auto scale_value = bounds.getHeight();
 
@@ -212,12 +213,12 @@ public:
 		path.lineTo(static_cast<float> (arrowZone.getCentreX()), arrowZone.getCentreY() + 3.0f);
 		path.lineTo(arrowZone.getRight() - 3.0f, arrowZone.getCentreY() - 2.0f);
 
-		g.setColour(box.findColour(juce::ComboBox::arrowColourId).withAlpha((box.isEnabled() ? 0.9f : 0.2f)));
+		g.setColour(dark_grey);
 		g.strokePath(path, juce::PathStrokeType(2.0f));
 	};
 
-	
-	
+
+
 
 private:
 
@@ -226,8 +227,10 @@ private:
 	juce::Colour dark_grey = juce::Colour::fromRGB(25, 25, 25);			//(25, 25, 25);
 
 	juce::Typeface::Ptr tface = juce::Typeface::createSystemTypefaceFor(BinaryData::MyriadProRegular_otf, BinaryData::MyriadProRegular_otfSize);
-	
-	
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DB_LookFeel)
+
+
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DB_LookFeel)
 };
+
+}

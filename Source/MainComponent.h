@@ -51,7 +51,7 @@ private:
     //==============================================================================
     // Your private member variables go here...
 
-	DB_LookFeel mylookfeel;
+	DB::DB_LookFeel mylookfeel;
 
 	Slider myslider;
 
@@ -59,9 +59,9 @@ private:
 
 	ComboBox mycombobox;
 
-	HeaderBar headerbar;
+	DB::HeaderBar headerbar;
 
-	ModuleSpace modulespace;
+	DB::ModuleSpace modulespace;
 	
 	Rectangle<int> bounds;
 
