@@ -49,7 +49,7 @@ public:
 			g.fillRoundedRectangle(bounds, corner_size);
 
 
-			auto bottom_height = 25.0f;
+			auto bottom_height = titleHeight;
 			auto edited_bounds = bounds.reduced(5).removeFromTop(bounds.getHeight() - bottom_height);
 
 			g.setColour(grey);
@@ -78,7 +78,7 @@ public:
 			g.fillRoundedRectangle(bounds, corner_size);
 
 
-			auto top_height = 15.0f;
+			auto top_height = titleHeight;
 			auto edited_bounds = bounds.reduced(5).removeFromBottom(bounds.getHeight() - top_height);
 
 			g.setColour(grey);
@@ -108,7 +108,7 @@ public:
 			g.fillRoundedRectangle(bounds, corner_size);
 
 
-			auto side_width = 25.0f;
+			auto side_width = titleHeight;
 			auto edited_bounds = bounds.reduced(5.0f).removeFromRight(bounds.getWidth() - side_width);
 
 			g.setColour(grey);
@@ -136,12 +136,23 @@ public:
 		sideways_flag = sideways;
 	};
 
+	float getTitleHeight()
+	{
+		return titleHeight+12;
+	}
+
+	virtual void paintSpace(juce::Graphics& g)
+	{
+		float x = 12.0f;
+	}
 
 private:
 
 	juce::String module_text = " ";
 
 	bool inverted_flag = false, sideways_flag = false;
+
+	float titleHeight = 25.0f;
 
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ModuleSpace)
