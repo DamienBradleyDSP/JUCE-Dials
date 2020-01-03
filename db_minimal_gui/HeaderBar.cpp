@@ -38,7 +38,7 @@ public:
 		juce::Colour grey = findColour(1, true);
 		juce::Colour dark_grey = findColour(2, true);
 
-		juce::Rectangle<int> header_bounds(0, 0, getLocalBounds().getWidth(), 90);
+		juce::Rectangle<int> header_bounds(0, 0, getLocalBounds().getWidth(), headerHeight);
 
 		g.fillAll(grey);
 		g.setColour(dark_grey);
@@ -74,9 +74,15 @@ public:
 		header = header_text;
 	};
 
+	int getHeaderHeight()
+	{
+		return headerHeight;
+	}
+
 private:
 
 	juce::String header = " ";
+	int headerHeight = 90;
 
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(HeaderBar)
