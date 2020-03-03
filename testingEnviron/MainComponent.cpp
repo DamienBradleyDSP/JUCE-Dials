@@ -11,6 +11,7 @@
 //==============================================================================
 MainComponent::MainComponent() : bounds(30, 30, 100, 50)
 {
+	
     setSize (800, 800);
 
 	setLookAndFeel(&mylookfeel);
@@ -19,27 +20,36 @@ MainComponent::MainComponent() : bounds(30, 30, 100, 50)
 	auto button_width = 800;
 	auto button_height = 800;
 
-	myslider.setSliderStyle(Slider::SliderStyle::RotaryHorizontalVerticalDrag);
-	myslider.setTextBoxStyle(Slider::TextBoxRight, true, 10, 10);
+	myslider.setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
+	myslider.setTextBoxStyle(juce::Slider::TextBoxRight, true, 10, 10);
 
 
-	//addAndMakeVisible(myslider);
+	addAndMakeVisible(myslider);
 
-	//addAndMakeVisible(mybutton);
+	addAndMakeVisible(mybutton);
 
 	addAndMakeVisible(mycombobox);
 
-	//addAndMakeVisible(headerbar);
-	headerbar.set_text("HEADER BAR");
+	addAndMakeVisible(headerbar);
+	headerbar.setText("HEADER BAR");
 
 	//addAndMakeVisible(modulespace);
 
-	modulespace.set_text("SYNTHESISER");
-	modulespace.set_rotation(false, false);
+	modulespace.setText("SYNTHESISER");
+	modulespace.setRotation(false);
 
 	mycombobox.addItem("3",1);
-	mycombobox.setJustificationType(Justification::centred);
+	mycombobox.setJustificationType(juce::Justification::centred);
+
+
 	
+
+	//addAndMakeVisible(modulespace2);
+	modulespace2.setText("Blah blah");
+	modulespace2.setTabWidth(160);
+
+
+
 
 }
 
@@ -49,7 +59,7 @@ MainComponent::~MainComponent()
 }
 
 //==============================================================================
-void MainComponent::paint (Graphics& g)
+void MainComponent::paint (juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     
@@ -65,11 +75,10 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
 
-	myslider.setBounds(bounds);
-	mybutton.setBounds(bounds.reduced(30));
-	mycombobox.setBounds(bounds);
-	headerbar.setBounds(bounds);
-	modulespace.setBounds(bounds);
+	headerbar.setBounds(getLocalBounds());
+
+	modulespace.setBounds(getLocalBounds());
+	modulespace2.setBounds(getLocalBounds());
 
 
 }

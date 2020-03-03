@@ -47,8 +47,9 @@ END_JUCE_MODULE_DECLARATION
 
 
 //#include "db_BinaryData.h"
-#include "DB_LookFeel.cpp"
-#include "HeaderBar.cpp"
-#include "ModuleSpace.cpp"
+#include "minimal_elements/LookFeel.h"
+#include "minimal_elements/HeaderBar.h"
+#include "minimal_elements/ModuleSpace.h"
+#include "minimal_elements/SidewaysModuleSpace.h"
 
 

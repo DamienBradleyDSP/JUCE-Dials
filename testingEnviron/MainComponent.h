@@ -25,10 +25,13 @@ END_JUCE_MODULE_DECLARATION
 
 #pragma once
 
+
+
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "DB_LookFeel.cpp"
-#include "HeaderBar.cpp"
-#include "ModuleSpace.cpp"
+#include "../db_minimal_gui/minimal_elements/LookFeel.h"
+#include "../db_minimal_gui/minimal_elements/ModuleSpace.h"
+#include "../db_minimal_gui/minimal_elements/HeaderBar.h"
+#include "../db_minimal_gui/minimal_elements/SidewaysModuleSpace.h"
 
 //==============================================================================
 /*
@@ -36,7 +39,7 @@ END_JUCE_MODULE_DECLARATION
     your controls and content.
 */
 
-class MainComponent   : public Component
+class MainComponent   : public juce::Component
 {
 public:
     //==============================================================================
@@ -44,7 +47,7 @@ public:
     ~MainComponent();
 
     //==============================================================================
-    void paint (Graphics&) override;
+    void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
@@ -53,17 +56,18 @@ private:
 
 	DB::DB_LookFeel mylookfeel;
 
-	Slider myslider;
+	juce::Slider myslider;
 
-	ToggleButton mybutton;
+	juce::ToggleButton mybutton;
 
-	ComboBox mycombobox;
+	juce::ComboBox mycombobox;
 
 	DB::HeaderBar headerbar;
 
 	DB::ModuleSpace modulespace;
+	DB::SidewaysModuleSpace modulespace2;
 	
-	Rectangle<int> bounds;
+	juce::Rectangle<int> bounds;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

@@ -1,24 +1,3 @@
-
-JuceLibraryCode/ReadMe.txt
-JuceLibraryCode/JuceHeader.h
-JuceLibraryCode/include_juce_opengl.mm
-JuceLibraryCode/include_juce_opengl.cpp
-JuceLibraryCode/include_juce_gui_extra.mm
-JuceLibraryCode/include_juce_gui_extra.cpp
-JuceLibraryCode/include_juce_gui_basics.mm
-JuceLibraryCode/include_juce_gui_basics.cpp
-JuceLibraryCode/include_juce_graphics.mm
-JuceLibraryCode/include_juce_graphics.cpp
-JuceLibraryCode/include_juce_events.mm
-JuceLibraryCode/include_juce_events.cpp
-JuceLibraryCode/include_juce_data_structures.mm
-JuceLibraryCode/include_juce_data_structures.cpp
-JuceLibraryCode/include_juce_cryptography.mm
-JuceLibraryCode/include_juce_cryptography.cpp
-JuceLibraryCode/include_juce_core.mm
-JuceLibraryCode/include_juce_core.cpp
-JuceLibraryCode/include_juce_audio_processors.mm
-JuceLibraryCode/include_juce_audio_processors.cpp
 Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/CL.read.1.tlog
 Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/Juce Dials_App.lastbuildstate
 Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/link.command.1.tlog
@@ -49,22 +28,11 @@ Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors.obj
 Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_formats.obj
 Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_devices.obj
 Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_basics.obj
-Builds/VisualStudio2019/resources.rc
-Builds/VisualStudio2019/Juce Dials_App.vcxproj.user
-Builds/VisualStudio2019/Juce Dials_App.vcxproj.filters
-Builds/VisualStudio2019/Juce Dials_App.vcxproj
-Builds/VisualStudio2019/Juce Dials.sln
 Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/45753dd4ecac4c0e/MAIN.ipch
 Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/26bcbb15456d8de9/MAINCOMPONENT.ipch
 Builds/VisualStudio2019/.vs/Juce Dials/v16/Browse.VC.opendb
 Builds/VisualStudio2019/.vs/Juce Dials/v16/Browse.VC.db
 Builds/VisualStudio2019/.vs/Juce Dials/v16/.suo
-JuceLibraryCode/include_juce_audio_formats.mm
-JuceLibraryCode/include_juce_audio_formats.cpp
-JuceLibraryCode/include_juce_audio_devices.mm
-JuceLibraryCode/include_juce_audio_devices.cpp
-JuceLibraryCode/include_juce_audio_basics.mm
-JuceLibraryCode/include_juce_audio_basics.cpp
 Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/link.19360.delete.1.tlog
 Builds/VisualStudio2019/x64/Debug/App/Juce Dials_App.tlog/CL.17412.write.1.tlog
 Builds/VisualStudio2019/x64/Debug/App/DB_Knob.obj
@@ -116,3 +84,21 @@ Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/dcb7ce52cedc0893/MODULES
 *.tlog
 Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/e23dd4667527c4e9/INCLUDE_JUCE_EVENTS.ipch
 Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/1191e2cd6411fa80/MODULESPACE.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/85731651e114f2bc/SIDEWAYSMODULESPACE.ipch
+Builds/VisualStudio2019/x64/Debug/App/SidewaysModuleSpace.obj
+Builds/VisualStudio2019/x64/Debug/App/LookFeel.obj
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/e082b4b243bb6b5/MODULESPACE.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/d3d4e5f55a8879e9/MODULESPACE.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/c825ad57ce0b0d6f/DB_LOOKFEEL.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/ae215eaccf88467a/SIDEWAYSMODULESPACE.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/acbd3c25f7f2196f/MAIN.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/a7071f082e0c306/JUCEHEADER.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/9a7d567872cf7855/HEADERBAR.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/748a0ec4ba6cd18/DB_MINIMAL_GUI.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/46f184f01ad097a9/HEADERBAR.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/3bf66d3f25882b80/MAINCOMPONENT.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/1dabc3e75bf0e6ce/LOOKFEEL.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/107a6ca862e421c2/LOOKFEEL.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/b43786ef88b95662/MAIN.ipch
+Builds/VisualStudio2019/.vs/Juce Dials/v16/ipch/AutoPCH/42e6ca5a20c2bab5/MAINCOMPONENT.ipch
+Juce Dials.jucer
