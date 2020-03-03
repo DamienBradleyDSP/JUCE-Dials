@@ -4,7 +4,7 @@
 
 #include "LookFeel.h"
 
-DB::DB_LookFeel::DB_LookFeel()
+DB::minimalGUI::LookFeel::LookFeel()
 {
 	setDefaultSansSerifTypeface(tface);
 
@@ -13,7 +13,7 @@ DB::DB_LookFeel::DB_LookFeel()
 	setColour(2, dark_grey);
 }
 
-void DB::DB_LookFeel::drawRotarySlider(juce::Graphics& g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, juce::Slider&)
+void DB::minimalGUI::LookFeel::drawRotarySlider(juce::Graphics& g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, juce::Slider&)
 {
 	// Setting Bounds and Angles
 
@@ -83,7 +83,7 @@ void DB::DB_LookFeel::drawRotarySlider(juce::Graphics& g, int x, int y, int widt
 	g.drawLine(marker_line, minute_marker_thickness * 2);
 }
 
-void DB::DB_LookFeel::drawLabel(juce::Graphics& g, juce::Label& label)
+void DB::minimalGUI::LookFeel::drawLabel(juce::Graphics& g, juce::Label& label)
 {
 	//g.fillAll(label.findColour(Label::backgroundColourId));
 
@@ -110,7 +110,7 @@ void DB::DB_LookFeel::drawLabel(juce::Graphics& g, juce::Label& label)
 	//g.drawRect(label.getLocalBounds());
 }
 
-juce::Slider::SliderLayout DB::DB_LookFeel::getSliderLayout(juce::Slider& slider)
+juce::Slider::SliderLayout DB::minimalGUI::LookFeel::getSliderLayout(juce::Slider& slider)
 {
 	// Override isnt working, look for V2
 
@@ -122,7 +122,7 @@ juce::Slider::SliderLayout DB::DB_LookFeel::getSliderLayout(juce::Slider& slider
 	return layout;
 }
 
-void DB::DB_LookFeel::drawToggleButton(juce::Graphics& g, juce::ToggleButton& button, bool, bool)
+void DB::minimalGUI::LookFeel::drawToggleButton(juce::Graphics& g, juce::ToggleButton& button, bool, bool)
 {
 	auto bounds = button.getLocalBounds().toFloat();
 	auto scale_value = bounds.getHeight();
@@ -161,7 +161,7 @@ void DB::DB_LookFeel::drawToggleButton(juce::Graphics& g, juce::ToggleButton& bu
 	}
 }
 
-void DB::DB_LookFeel::drawComboBox(juce::Graphics& g, int width, int height, bool, int, int, int, int, juce::ComboBox& box)
+void DB::minimalGUI::LookFeel::drawComboBox(juce::Graphics& g, int width, int height, bool, int, int, int, int, juce::ComboBox& box)
 {
 	auto bounds = box.getLocalBounds().toFloat();
 	auto scale_value = bounds.getHeight();

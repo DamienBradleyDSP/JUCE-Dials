@@ -4,16 +4,16 @@
 
 #include "HeaderBar.h"
 
-DB::HeaderBar::HeaderBar()
+DB::minimalGUI::HeaderBar::HeaderBar()
 {
 }
 
-DB::HeaderBar::HeaderBar(juce::String my_text)
+DB::minimalGUI::HeaderBar::HeaderBar(juce::String my_text)
 {
 	header = my_text;
 }
 
-void DB::HeaderBar::paint(juce::Graphics& g)
+void DB::minimalGUI::HeaderBar::paint(juce::Graphics& g)
 {
 	juce::Colour light_grey = findColour(0, true);
 	juce::Colour grey = findColour(1, true);
@@ -49,16 +49,16 @@ void DB::HeaderBar::paint(juce::Graphics& g)
 	//g.fillRect(text_bounds);
 }
 
-void DB::HeaderBar::resized()
+void DB::minimalGUI::HeaderBar::resized()
 {
 }
 
-void DB::HeaderBar::setText(juce::String header_text)
+void DB::minimalGUI::HeaderBar::setText(juce::String header_text)
 {
 	header = header_text;
 }
 
-int DB::HeaderBar::getHeaderHeight()
+int DB::minimalGUI::HeaderBar::getHeaderHeight()
 {
 	return headerHeight;
 }

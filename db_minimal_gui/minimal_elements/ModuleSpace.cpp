@@ -4,20 +4,20 @@
 
 #include "ModuleSpace.h"
 
-DB::ModuleSpace::ModuleSpace() {};
+DB::minimalGUI::ModuleSpace::ModuleSpace() {};
 
-DB::ModuleSpace::ModuleSpace(juce::String text)
+DB::minimalGUI::ModuleSpace::ModuleSpace(juce::String text)
 {
 	module_text = text;
 }
 
-DB::ModuleSpace::ModuleSpace(juce::String text, bool inverted)
+DB::minimalGUI::ModuleSpace::ModuleSpace(juce::String text, bool inverted)
 {
 	module_text = text;
 	inverted_flag = inverted;
 }
 
-void DB::ModuleSpace::paint(juce::Graphics& g)
+void DB::minimalGUI::ModuleSpace::paint(juce::Graphics& g)
 {
 	if (!inverted_flag)
 	{
@@ -86,21 +86,21 @@ void DB::ModuleSpace::paint(juce::Graphics& g)
 	}
 }
 
-void DB::ModuleSpace::resized()
+void DB::minimalGUI::ModuleSpace::resized()
 {
 }
 
-void DB::ModuleSpace::setText(juce::String text)
+void DB::minimalGUI::ModuleSpace::setText(juce::String text)
 {
 	module_text = text;
 }
 
-void DB::ModuleSpace::setRotation(bool inverted)
+void DB::minimalGUI::ModuleSpace::setRotation(bool inverted)
 {
 	inverted_flag = inverted;
 }
 
-juce::Rectangle<float> DB::ModuleSpace::getInternalBounds()
+juce::Rectangle<float> DB::minimalGUI::ModuleSpace::getInternalBounds()
 {
 	return innerBounds;
 }

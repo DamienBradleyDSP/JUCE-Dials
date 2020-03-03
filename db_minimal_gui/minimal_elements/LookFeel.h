@@ -3,12 +3,14 @@
 
 namespace DB
 {
+namespace minimalGUI
+{
 
-class DB_LookFeel : public juce::LookAndFeel_V4
+class LookFeel : public juce::LookAndFeel_V4
 {
 public:
 
-	DB_LookFeel();
+	LookFeel();
 
 	void drawRotarySlider(juce::Graphics& g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, juce::Slider&) override;
 
@@ -32,8 +34,9 @@ private:
 
 
 
-	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DB_LookFeel)
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(LookFeel)
 };
 
+}
 }
 

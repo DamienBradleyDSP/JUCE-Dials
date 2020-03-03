@@ -17,6 +17,8 @@
 
 namespace DB
 {
+namespace minimalGUI
+{
 
 class SidewaysModuleSpace : public juce::Component
 {
@@ -44,4 +46,5 @@ private:
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SidewaysModuleSpace)
 };
 
+}
 }

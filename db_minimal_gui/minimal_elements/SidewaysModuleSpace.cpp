@@ -19,31 +19,22 @@
 #endif // !DB_MODULE_TESTING
 
 
-
-
-
-//==============================================================================
-
-
-namespace DB
-{
-
-SidewaysModuleSpace::SidewaysModuleSpace()
+DB::minimalGUI::SidewaysModuleSpace::SidewaysModuleSpace()
 {
 
 }
 
-SidewaysModuleSpace::SidewaysModuleSpace(juce::String text)
+DB::minimalGUI::SidewaysModuleSpace::SidewaysModuleSpace(juce::String text)
 {
 
 	moduleText = text;
 }
 
-SidewaysModuleSpace::~SidewaysModuleSpace()
+DB::minimalGUI::SidewaysModuleSpace::~SidewaysModuleSpace()
 {
 }
 
-void SidewaysModuleSpace::paint(juce::Graphics& g)
+void DB::minimalGUI::SidewaysModuleSpace::paint(juce::Graphics& g)
 {
 	juce::Colour light_grey = findColour(0, true);
 	juce::Colour grey = findColour(1, true);
@@ -73,26 +64,24 @@ void SidewaysModuleSpace::paint(juce::Graphics& g)
 
 }
 
-void SidewaysModuleSpace::resized()
+void DB::minimalGUI::SidewaysModuleSpace::resized()
 {
 	// This method is where you should set the bounds of any child
 	// components that your component contains..
 
 }
 
-void SidewaysModuleSpace::setText(juce::String text)
+void DB::minimalGUI::SidewaysModuleSpace::setText(juce::String text)
 {
 	moduleText = text;
 }
 
-void SidewaysModuleSpace::setTabWidth(float newWidth)
+void DB::minimalGUI::SidewaysModuleSpace::setTabWidth(float newWidth)
 {
 	tabWidth = newWidth;
 }
 
-juce::Rectangle<float> SidewaysModuleSpace::getInternalBounds()
+juce::Rectangle<float> DB::minimalGUI::SidewaysModuleSpace::getInternalBounds()
 {
 	return innerBounds;
-}
-
 }

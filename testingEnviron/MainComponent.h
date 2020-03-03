@@ -54,7 +54,7 @@ private:
     //==============================================================================
     // Your private member variables go here...
 
-	DB::DB_LookFeel mylookfeel;
+	DB::minimalGUI::LookFeel mylookfeel;
 
 	juce::Slider myslider;
 
@@ -62,10 +62,10 @@ private:
 
 	juce::ComboBox mycombobox;
 
-	DB::HeaderBar headerbar;
+	DB::minimalGUI::HeaderBar headerbar;
 
-	DB::ModuleSpace modulespace;
-	DB::SidewaysModuleSpace modulespace2;
+	DB::minimalGUI::ModuleSpace modulespace;
+	DB::minimalGUI::SidewaysModuleSpace modulespace2;
 	
 	juce::Rectangle<int> bounds;
 
