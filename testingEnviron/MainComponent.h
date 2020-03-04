@@ -33,6 +33,8 @@ END_JUCE_MODULE_DECLARATION
 #include "../db_minimal_gui/minimal_elements/HeaderBar.h"
 #include "../db_minimal_gui/minimal_elements/SidewaysModuleSpace.h"
 
+#include "testComponent.h"
+
 //==============================================================================
 /*
     This component lives inside our window, and this is where you should put all
@@ -68,6 +70,10 @@ private:
 	DB::minimalGUI::SidewaysModuleSpace modulespace2;
 	
 	juce::Rectangle<int> bounds;
+
+
+
+
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

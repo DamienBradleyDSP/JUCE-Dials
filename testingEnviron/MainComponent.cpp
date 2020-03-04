@@ -22,27 +22,16 @@ MainComponent::MainComponent() : bounds(30, 30, 100, 50)
 
 	myslider.setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
 	myslider.setTextBoxStyle(juce::Slider::TextBoxRight, true, 10, 10);
-
-
 	addAndMakeVisible(myslider);
 
-	addAndMakeVisible(mybutton);
-
-	addAndMakeVisible(mycombobox);
-
-	addAndMakeVisible(headerbar);
-	headerbar.setText("HEADER BAR");
-
-	//addAndMakeVisible(modulespace);
-
+	addAndMakeVisible(modulespace);
 	modulespace.setText("SYNTHESISER");
-	modulespace.setRotation(false);
 
-	mycombobox.addItem("3",1);
-	mycombobox.setJustificationType(juce::Justification::centred);
-
-
-	
+	Component* theTabSpaceComponent = new testComponent;
+	theTabSpaceComponent->setName("TESTING");
+	modulespace.addTab("BAR VARIATION", theTabSpaceComponent);
+	//Component* anotherComponent = new Component;
+	//modulespace.addTab("HUMANISE", anotherComponent);
 
 	//addAndMakeVisible(modulespace2);
 	modulespace2.setText("Blah blah");
@@ -79,6 +68,7 @@ void MainComponent::resized()
 
 	modulespace.setBounds(getLocalBounds());
 	modulespace2.setBounds(getLocalBounds());
+
 
 
 }

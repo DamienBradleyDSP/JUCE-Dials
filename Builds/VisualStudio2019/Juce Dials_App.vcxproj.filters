@@ -403,6 +403,9 @@
     <Filter Include="Juce Dials\db_minimal_gui\testingEnviron">
       <UniqueIdentifier>{a9db6323-f076-4a72-b82f-f02d1cb00cd4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Juce Dials\db_minimal_gui\minimal_elements\ModuleSpaceElements">
+      <UniqueIdentifier>{4ee0a498-8133-4893-a395-13e97f8c1896}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -2165,6 +2168,12 @@
     </ClCompile>
     <ClCompile Include="..\..\testingEnviron\Main.cpp">
       <Filter>Juce Dials\db_minimal_gui\testingEnviron</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\testingEnviron\testComponent.cpp">
+      <Filter>Juce Dials\db_minimal_gui\testingEnviron</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\db_minimal_gui\minimal_elements\ModuleSpaceElements\TabElement.cpp">
+      <Filter>Juce Dials\db_minimal_gui\minimal_elements\ModuleSpaceElements</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -4207,6 +4216,12 @@
     </ClInclude>
     <ClInclude Include="..\..\testingEnviron\MainComponent.h">
       <Filter>Juce Dials\db_minimal_gui\testingEnviron</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\testingEnviron\testComponent.h">
+      <Filter>Juce Dials\db_minimal_gui\testingEnviron</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\db_minimal_gui\minimal_elements\ModuleSpaceElements\TabElement.h">
+      <Filter>Juce Dials\db_minimal_gui\minimal_elements\ModuleSpaceElements</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

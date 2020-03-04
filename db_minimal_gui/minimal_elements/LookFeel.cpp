@@ -11,6 +11,7 @@ DB::minimalGUI::LookFeel::LookFeel()
 	setColour(0, light_grey);
 	setColour(1, grey);
 	setColour(2, dark_grey);
+
 }
 
 void DB::minimalGUI::LookFeel::drawRotarySlider(juce::Graphics& g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, juce::Slider&)
