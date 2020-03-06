@@ -15,6 +15,131 @@ DB::minimalGUI::ModuleSpace::~ModuleSpace()
 void DB::minimalGUI::ModuleSpace::paint(juce::Graphics& g)
 {
 	
+	paintModuleFrame(g);
+	resized();
+}
+
+
+void DB::minimalGUI::ModuleSpace::resized()
+{
+	
+	auto spaceBounds = innerBounds;
+	auto tabBounds = spaceBounds.removeFromBottom(tabHeight);
+	auto tabEnabledBounds = spaceBounds.removeFromTop(tabHeight);
+	auto tabRightSpace = tabBounds;
+
+	int tabCounter = 0;
+	auto tabSpaceIterator = tabSpaces.begin();
+
+	for (auto tab : tabButtons)
+	{
+		tabRightSpace = tabBounds.removeFromRight(tabWidth);
+
+		if (tabEnabled[tabCounter])
+		{
+			tab->setBounds(tabEnabledBounds.removeFromLeft(tabWidth).toNearestInt());
+		}
+		else tab->setBounds(tabRightSpace.toNearestInt());
+
+		tabCounter++;
+	}
+
+	
+	for (auto&& main : mainSpace) main->setBounds(spaceBounds.toNearestInt());
+	for(auto&& tab : tabSpaces) tab->setBounds(spaceBounds.toNearestInt());
+
+	for (auto&& main : mainSpace) main->toFront(true);
+
+	tabCounter = 0;
+	for (auto&& tab : tabSpaces)
+	{
+		if (tabEnabled[tabCounter])
+		{
+			tab->toFront(true);
+		}
+		tabCounter++;
+	}
+	
+	/*tabCounter = 0;
+	for (auto&& tab : tabSpaces)
+	{
+		if (tabEnabled[tabCounter])
+		{
+			for (auto&& main : mainSpace) main->setBounds(0,0,0,0);
+			tab->setBounds(spaceBounds.toNearestInt());
+			tab->toFront(true);
+		}
+		else
+		{
+			tab->setBounds(0, 0, 0, 0);
+		}
+		tabCounter++;
+	}*/
+	//mainSpace->toFront(false);
+
+	//*/
+
+}
+
+
+void DB::minimalGUI::ModuleSpace::setText(juce::String text)
+{
+	module_text = text;
+}
+
+void DB::minimalGUI::ModuleSpace::addMainSpace(juce::Component* space)
+{
+	mainSpace.add(space);
+	addAndMakeVisible(mainSpace.getFirst());
+}
+
+void DB::minimalGUI::ModuleSpace::addTab(juce::String name, juce::Component* tabSpace)
+{
+	tabButtons.add(new DB::minimalGUI::_moduleInternalElements::TabElement(name));
+	tabSpaces.add(tabSpace);
+	tabEnabled.push_back(false);
+
+	tabButtons.getLast()->setButtonSizes(tabCornerSize,tabStripSize,tabFontSize);
+	tabButtons.getLast()->addMouseListener(this, true);
+	makeTabsVisible();
+
+}
+void DB::minimalGUI::ModuleSpace::mouseUp(const MouseEvent& event)
+{
+
+	auto tabCounter = 0;
+	for (auto&& tab : tabButtons)
+	{
+
+		if (tab == event.originalComponent)
+		{
+			tabEnabled[tabCounter].flip();
+		}
+		else
+		{
+			tabEnabled[tabCounter] = false;
+		}
+
+		tabCounter++;
+	}
+}
+
+
+void DB::minimalGUI::ModuleSpace::makeTabsVisible()
+{
+	for (auto&& tab : tabButtons)
+	{
+		addAndMakeVisible(tab);
+	}
+	for (auto&& tab : tabSpaces)
+	{
+		addAndMakeVisible(tab);
+	}
+
+}
+
+void DB::minimalGUI::ModuleSpace::paintModuleFrame(juce::Graphics& g)
+{
 	light_grey = findColour(0, true);
 	grey = findColour(1, true);
 	dark_grey = findColour(2, true);
@@ -31,8 +156,6 @@ void DB::minimalGUI::ModuleSpace::paint(juce::Graphics& g)
 	g.setColour(grey);
 	g.fillRoundedRectangle(edited_bounds, moduleCornerSize);
 
-
-
 	g.setColour(dark_grey);
 	g.fillRect(edited_bounds.removeFromBottom(moduleBarHeight));
 
@@ -42,86 +165,6 @@ void DB::minimalGUI::ModuleSpace::paint(juce::Graphics& g)
 	//g.fillRect(text_bounds.removeFromBottom(bottom_height));
 	g.setFont(moduleFontSize);
 	g.drawText(module_text, text_bounds.removeFromBottom(moduleBarHeight * 2.0f), juce::Justification::centred, true);
-
-
-	/*
-	juce::Colour light_grey = findColour(0, true);
-	juce::Colour grey = findColour(1, true);
-	juce::Colour dark_grey = findColour(2, true);
-
-	auto bounds = getLocalBounds().toFloat();
-	auto text_bounds = bounds;
-	auto corner_size = 25.0f;
-
-	g.setColour(dark_grey);
-	g.fillRoundedRectangle(bounds, corner_size);
-
-
-	auto top_height = 15.0f;
-	auto edited_bounds = bounds.reduced(5).removeFromBottom(bounds.getHeight() - top_height);
-
-	g.setColour(grey);
-	g.fillRoundedRectangle(edited_bounds, corner_size);
-
-	g.setColour(dark_grey);
-	g.fillRect(edited_bounds.removeFromTop(top_height));
-
-	innerBounds = edited_bounds;
-
-	g.setColour(grey);
-	//g.fillRect(text_bounds.removeFromBottom(bottom_height));
-	g.setFont(20.0f);
-	g.drawText(module_text, text_bounds.removeFromTop(top_height * 1.6f), juce::Justification::centred, true);
-	*/
-
-	resized();
-}
-
-
-void DB::minimalGUI::ModuleSpace::resized()
-{
-
-	auto spaceBounds = innerBounds;
-	auto tabBounds = spaceBounds.removeFromBottom(tabHeight);
-
-	for (auto tab : tabButtons)
-	{
-		tab->setBounds(tabBounds.removeFromRight(tabWidth).toNearestInt());
-	}
-
-
-	for (auto&& tab : tabSpaces)
-	{
-		tab->setBounds(spaceBounds.toNearestInt());
-	}
-}
-
-
-void DB::minimalGUI::ModuleSpace::setText(juce::String text)
-{
-	module_text = text;
-}
-
-void DB::minimalGUI::ModuleSpace::addTab(juce::String name, juce::Component* tabSpace)
-{
-	tabButtons.add(new DB::minimalGUI::_moduleInternalElements::TabElement(name));
-	tabSpaces.add(tabSpace);
-
-	tabButtons.getLast()->setButtonSizes(tabCornerSize,tabStripSize,tabFontSize);
-
-	makeTabsVisible();
-}
-void DB::minimalGUI::ModuleSpace::makeTabsVisible()
-{
-	for (auto&& tab : tabButtons)
-	{
-		addAndMakeVisible(tab);
-	}
-	for (auto&& tab : tabSpaces)
-	{
-		addAndMakeVisible(tab);
-	}
-
 }
 
 

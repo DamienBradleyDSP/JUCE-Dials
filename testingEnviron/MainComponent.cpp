@@ -28,10 +28,15 @@ MainComponent::MainComponent() : bounds(30, 30, 100, 50)
 	modulespace.setText("SYNTHESISER");
 
 	Component* theTabSpaceComponent = new testComponent;
-	theTabSpaceComponent->setName("TESTING");
 	modulespace.addTab("BAR VARIATION", theTabSpaceComponent);
+
+	Component* otherComp = new testComponent;
+	modulespace.addTab("BEAT VARIATION", otherComp);
 	//Component* anotherComponent = new Component;
 	//modulespace.addTab("HUMANISE", anotherComponent);
+
+	Component* testing = new testComponent;
+	modulespace.addMainSpace(testing);
 
 	//addAndMakeVisible(modulespace2);
 	modulespace2.setText("Blah blah");

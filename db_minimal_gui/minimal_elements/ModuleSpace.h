@@ -17,17 +17,22 @@ public:
 
 	void setText(juce::String text);
 
+	void addMainSpace(juce::Component* tabSpace);
 	void addTab(juce::String tabName, juce::Component* tabSpace);
+
+	void mouseUp(const MouseEvent& event) override;
 
 private:
 
 	void makeTabsVisible();
-	
+	void paintModuleFrame(juce::Graphics& g);
 
 	juce::String module_text = " ";
 
+	OwnedArray<juce::Component> mainSpace;
 	OwnedArray<DB::minimalGUI::_moduleInternalElements::TabElement> tabButtons;
 	OwnedArray<juce::Component> tabSpaces;
+	std::vector<bool> tabEnabled;
 
 	juce::Rectangle<float> innerBounds;
 
