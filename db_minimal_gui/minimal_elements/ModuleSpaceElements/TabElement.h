@@ -16,11 +16,11 @@ public:
 	void paint(juce::Graphics& g) override;
 	void resized() override;
 
-	void setButtonSizes(const int corner, const int strip, const int font);
+	void setButtonSizes(const float corner, const float strip, const float font);
 
-	void mouseEnter(const MouseEvent& event) override;
-	void mouseExit(const MouseEvent& event) override;
-	void mouseDown(const MouseEvent& event) override;
+	void mouseEnter(const juce::MouseEvent& event) override;
+	void mouseExit(const juce::MouseEvent& event) override;
+	void mouseDown(const juce::MouseEvent& event) override;
 
 	void enabledFlip();
 	void setDisabled();
@@ -33,9 +33,9 @@ private:
 	void paintMouseDown(juce::Graphics& g);
 
 	juce::String tabName = "";
-	int cornerSize;
-	int stripSize;
-	int fontSize;
+	float cornerSize;
+	float stripSize;
+	float fontSize;
 
 	bool mouseIsDown = false;
 	bool isEnabled = false;

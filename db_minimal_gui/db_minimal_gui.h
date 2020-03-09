@@ -50,6 +50,7 @@ END_JUCE_MODULE_DECLARATION
 #include "minimal_elements/LookFeel.h"
 #include "minimal_elements/HeaderBar.h"
 #include "minimal_elements/ModuleSpace.h"
+#include "minimal_elements/ModuleSpaceElements/TabElement.h"
 #include "minimal_elements/SidewaysModuleSpace.h"
 
 

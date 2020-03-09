@@ -30,6 +30,7 @@ END_JUCE_MODULE_DECLARATION
 #include "minimal_elements/LookFeel.cpp"
 #include "minimal_elements/HeaderBar.cpp"
 #include "minimal_elements/ModuleSpace.cpp"
+#include "minimal_elements/ModuleSpaceElements/TabElement.cpp"
 #include "minimal_elements/SidewaysModuleSpace.cpp"
 
 

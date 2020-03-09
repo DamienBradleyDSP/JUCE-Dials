@@ -20,24 +20,24 @@ void DB::minimalGUI::_moduleInternalElements::TabElement::resized()
 {
 }
 
-void DB::minimalGUI::_moduleInternalElements::TabElement::setButtonSizes(const int corner, const int strip, const int font)
+void DB::minimalGUI::_moduleInternalElements::TabElement::setButtonSizes(const float corner, const float strip, const float font)
 {
 	cornerSize = corner;
 	stripSize = strip;
 	fontSize = font;
 }
 
-void DB::minimalGUI::_moduleInternalElements::TabElement::mouseEnter(const MouseEvent& event)
+void DB::minimalGUI::_moduleInternalElements::TabElement::mouseEnter(const juce::MouseEvent&)
 {
 	repaint();
 }
 
-void DB::minimalGUI::_moduleInternalElements::TabElement::mouseExit(const MouseEvent& event)
+void DB::minimalGUI::_moduleInternalElements::TabElement::mouseExit(const juce::MouseEvent&)
 {
 	repaint();
 }
 
-void DB::minimalGUI::_moduleInternalElements::TabElement::mouseDown(const MouseEvent& event)
+void DB::minimalGUI::_moduleInternalElements::TabElement::mouseDown(const juce::MouseEvent&)
 {
 	//repaint();
 }
@@ -78,13 +78,13 @@ void DB::minimalGUI::_moduleInternalElements::TabElement::paintMouseOver(juce::G
 	// Draw a strip of grey
 
 	auto colourStrip = tabBounds;
-	colourStrip = colourStrip.removeFromBottom(stripSize);
+	colourStrip = colourStrip.removeFromBottom((int)stripSize);
 	g.setColour(grey);
 	if (!isEnabled) g.fillRect(colourStrip);
 
 	// Draw dark text
 	auto textBounds = tabBounds;
-	textBounds.removeFromBottom(stripSize);
+	textBounds.removeFromBottom((int)stripSize);
 	g.setColour(grey);
 	g.setFont(fontSize);
 	g.drawText(tabName, textBounds, juce::Justification::centred, true);
@@ -109,13 +109,13 @@ void DB::minimalGUI::_moduleInternalElements::TabElement::paintNormal(juce::Grap
 
 	// Draw a strip of grey
 	auto colourStrip = tabBounds;
-	colourStrip = colourStrip.removeFromBottom(stripSize);
+	colourStrip = colourStrip.removeFromBottom((int)stripSize);
 	g.setColour(grey);
 	if (!isEnabled) g.fillRect(colourStrip);
 
 	// Draw normal text
 	auto textBounds = tabBounds;
-	textBounds.removeFromBottom(stripSize);
+	textBounds.removeFromBottom((int)stripSize);
 	g.setColour(textColour);
 	g.setFont(fontSize);
 	g.drawText(tabName, textBounds, juce::Justification::centred, true);

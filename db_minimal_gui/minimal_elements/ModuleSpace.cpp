@@ -41,11 +41,11 @@ void DB::minimalGUI::ModuleSpace::addTab(juce::String name, juce::Component* tab
 	makeTabsVisible();
 
 }
-void DB::minimalGUI::ModuleSpace::mouseDown(const MouseEvent& event)
+void DB::minimalGUI::ModuleSpace::mouseDown(const juce::MouseEvent&)
 {
 	repaint();
 }
-void DB::minimalGUI::ModuleSpace::mouseUp(const MouseEvent& event)
+void DB::minimalGUI::ModuleSpace::mouseUp(const juce::MouseEvent& event)
 {
 	// Change whether tab enabled on click
 

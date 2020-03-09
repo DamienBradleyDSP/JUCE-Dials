@@ -20,8 +20,8 @@ public:
 	void addMainSpace(juce::Component* tabSpace);
 	void addTab(juce::String tabName, juce::Component* tabSpace);
 
-	void mouseDown(const MouseEvent& event) override;
-	void mouseUp(const MouseEvent& event) override;
+	void mouseDown(const juce::MouseEvent& event) override;
+	void mouseUp(const juce::MouseEvent& event) override;
 
 private:
 
@@ -33,9 +33,9 @@ private:
 
 	juce::String module_text = " ";
 
-	OwnedArray<juce::Component> mainSpace;
-	OwnedArray<DB::minimalGUI::_moduleInternalElements::TabElement> tabButtons;
-	OwnedArray<juce::Component> tabSpaces;
+	juce::OwnedArray<juce::Component> mainSpace;
+	juce::OwnedArray<DB::minimalGUI::_moduleInternalElements::TabElement> tabButtons;
+	juce::OwnedArray<juce::Component> tabSpaces;
 	bool mainSpaceSelected = true;
 
 	juce::Rectangle<float> innerBounds;

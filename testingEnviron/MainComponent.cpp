@@ -17,9 +17,6 @@ MainComponent::MainComponent() : bounds(30, 30, 100, 50)
 	setLookAndFeel(&mylookfeel);
 
 
-	auto button_width = 800;
-	auto button_height = 800;
-
 	myslider.setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
 	myslider.setTextBoxStyle(juce::Slider::TextBoxRight, true, 10, 10);
 	addAndMakeVisible(myslider);
