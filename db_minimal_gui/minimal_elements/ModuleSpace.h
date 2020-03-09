@@ -9,8 +9,8 @@ namespace minimalGUI
 class ModuleSpace : public juce::Component
 {
 public:
-	ModuleSpace();
-	~ModuleSpace();
+	ModuleSpace() = default;
+	~ModuleSpace() = default;
 
 	void paint(juce::Graphics& g) override;
 	void resized() override;
@@ -20,19 +20,23 @@ public:
 	void addMainSpace(juce::Component* tabSpace);
 	void addTab(juce::String tabName, juce::Component* tabSpace);
 
+	void mouseDown(const MouseEvent& event) override;
 	void mouseUp(const MouseEvent& event) override;
 
 private:
 
 	void makeTabsVisible();
+	void layoutSpaces();
 	void paintModuleFrame(juce::Graphics& g);
+	void paintTabFrame(juce::Graphics& g);
+	
 
 	juce::String module_text = " ";
 
 	OwnedArray<juce::Component> mainSpace;
 	OwnedArray<DB::minimalGUI::_moduleInternalElements::TabElement> tabButtons;
 	OwnedArray<juce::Component> tabSpaces;
-	std::vector<bool> tabEnabled;
+	bool mainSpaceSelected = true;
 
 	juce::Rectangle<float> innerBounds;
 

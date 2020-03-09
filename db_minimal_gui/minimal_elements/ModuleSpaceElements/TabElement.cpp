@@ -39,12 +39,23 @@ void DB::minimalGUI::_moduleInternalElements::TabElement::mouseExit(const MouseE
 
 void DB::minimalGUI::_moduleInternalElements::TabElement::mouseDown(const MouseEvent& event)
 {
-	repaint();
+	//repaint();
 }
 
-void DB::minimalGUI::_moduleInternalElements::TabElement::mouseUp(const MouseEvent& event)
+
+void DB::minimalGUI::_moduleInternalElements::TabElement::enabledFlip()
 {
-	repaint();
+	isEnabled = isEnabled ^ true;
+}
+
+void DB::minimalGUI::_moduleInternalElements::TabElement::setDisabled()
+{
+	isEnabled = false;
+}
+
+bool DB::minimalGUI::_moduleInternalElements::TabElement::getButtonState()
+{
+	return isEnabled;
 }
 
 void DB::minimalGUI::_moduleInternalElements::TabElement::paintMouseOver(juce::Graphics& g)
@@ -54,38 +65,24 @@ void DB::minimalGUI::_moduleInternalElements::TabElement::paintMouseOver(juce::G
 	auto dark_grey = findColour(2, true);
 	auto textColour = light_grey;
 
+	// Fill rounded tab part
 	g.setColour(dark_grey);
 	auto tabBounds = getLocalBounds();
 	g.fillRoundedRectangle(tabBounds.toFloat(), cornerSize);
 
+	// Fill rectangle for bottom half of tab
 	auto fillBottom = tabBounds;
 	fillBottom.removeFromTop(fillBottom.getHeight() / 2);
 	g.fillRect(fillBottom);
 
+	// Draw a strip of grey
+
 	auto colourStrip = tabBounds;
 	colourStrip = colourStrip.removeFromBottom(stripSize);
 	g.setColour(grey);
-	g.fillRect(colourStrip);
+	if (!isEnabled) g.fillRect(colourStrip);
 
-	g.setColour(dark_grey);
-	auto thirdWidth = colourStrip.getWidth() / 3;
-	colourStrip.removeFromLeft(thirdWidth);
-	colourStrip.removeFromRight(thirdWidth);
-	Path lines;
-	Line<float> left, right;
-	left.setStart(colourStrip.getBottomLeft().toFloat());
-	right.setStart(colourStrip.getBottomRight().toFloat());
-	colourStrip.removeFromLeft(5);
-	colourStrip.removeFromRight(5);
-	left.setEnd(colourStrip.getTopLeft().toFloat());
-	right.setEnd(colourStrip.getTopRight().toFloat());
-	lines.addLineSegment(left, 10);
-	lines.addLineSegment(right, 10);
-	g.fillPath(lines);
-
-	g.fillRect(colourStrip);
-
-
+	// Draw dark text
 	auto textBounds = tabBounds;
 	textBounds.removeFromBottom(stripSize);
 	g.setColour(grey);
@@ -100,19 +97,23 @@ void DB::minimalGUI::_moduleInternalElements::TabElement::paintNormal(juce::Grap
 	auto dark_grey = findColour(2, true);
 	auto textColour = light_grey;
 
+	// Fill rounded tab part
 	g.setColour(dark_grey);
 	auto tabBounds = getLocalBounds();
 	g.fillRoundedRectangle(tabBounds.toFloat(), cornerSize);
 
+	// Fill rectangle for bottom half of tab
 	auto fillBottom = tabBounds;
 	fillBottom.removeFromTop(fillBottom.getHeight() / 2);
 	g.fillRect(fillBottom);
 
+	// Draw a strip of grey
 	auto colourStrip = tabBounds;
 	colourStrip = colourStrip.removeFromBottom(stripSize);
 	g.setColour(grey);
-	g.fillRect(colourStrip);
+	if (!isEnabled) g.fillRect(colourStrip);
 
+	// Draw normal text
 	auto textBounds = tabBounds;
 	textBounds.removeFromBottom(stripSize);
 	g.setColour(textColour);
@@ -127,23 +128,13 @@ void DB::minimalGUI::_moduleInternalElements::TabElement::paintMouseDown(juce::G
 	auto dark_grey = findColour(2, true);
 	auto textColour = light_grey;
 
+	// Fill rounded tab part
 	g.setColour(dark_grey);
 	auto tabBounds = getLocalBounds();
 	g.fillRoundedRectangle(tabBounds.toFloat(), cornerSize);
 
+	// Fill rectangle for bottom half of tab
 	auto fillBottom = tabBounds;
 	fillBottom.removeFromTop(fillBottom.getHeight() / 2);
 	g.fillRect(fillBottom);
-
-	auto colourStrip = tabBounds;
-	colourStrip = colourStrip.removeFromBottom(stripSize);
-	g.setColour(grey);
-	//g.fillRect(colourStrip);
-
-	auto textBounds = tabBounds;
-	textBounds.removeFromBottom(stripSize);
-	g.setColour(textColour);
-	g.setFont(fontSize);
-
-	//g.drawText(tabName, textBounds, juce::Justification::centred, true);
 }

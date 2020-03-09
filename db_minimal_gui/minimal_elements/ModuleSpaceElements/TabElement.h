@@ -21,7 +21,10 @@ public:
 	void mouseEnter(const MouseEvent& event) override;
 	void mouseExit(const MouseEvent& event) override;
 	void mouseDown(const MouseEvent& event) override;
-	void mouseUp(const MouseEvent& event) override;
+
+	void enabledFlip();
+	void setDisabled();
+	bool getButtonState();
 	
 private:
 
@@ -35,6 +38,7 @@ private:
 	int fontSize;
 
 	bool mouseIsDown = false;
+	bool isEnabled = false;
 };
 
 
