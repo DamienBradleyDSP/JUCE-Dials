@@ -113,7 +113,6 @@ void DB::minimalGUI::LookFeel::drawLabel(juce::Graphics& g, juce::Label& label)
 
 juce::Slider::SliderLayout DB::minimalGUI::LookFeel::getSliderLayout(juce::Slider& slider)
 {
-	// Override isnt working, look for V2
 
 	juce::Slider::SliderLayout layout;
 
@@ -182,4 +181,9 @@ void DB::minimalGUI::LookFeel::drawComboBox(juce::Graphics& g, int width, int he
 
 	g.setColour(dark_grey);
 	g.strokePath(path, juce::PathStrokeType(2.0f));
+}
+
+void DB::minimalGUI::LookFeel::drawPopupMenuBackground(juce::Graphics& g, int width, int height)
+{
+	g.fillAll(findColour(2));
 }

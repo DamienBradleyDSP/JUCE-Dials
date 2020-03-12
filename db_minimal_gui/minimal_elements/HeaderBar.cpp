@@ -44,7 +44,6 @@ void DB::minimalGUI::HeaderBar::paint(juce::Graphics& g)
 
 	g.drawText("db", left_text, juce::Justification::centredLeft);
 	g.drawText("db", right_text, juce::Justification::centredRight);
-	g.drawText("digital garden", bottom_bar, juce::Justification::centred);
 
 	//g.fillRect(text_bounds);
 }

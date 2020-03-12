@@ -39,9 +39,6 @@ MainComponent::MainComponent() : bounds(30, 30, 100, 50)
 	modulespace2.setText("Blah blah");
 	modulespace2.setTabWidth(160);
 
-
-
-
 }
 
 MainComponent::~MainComponent()

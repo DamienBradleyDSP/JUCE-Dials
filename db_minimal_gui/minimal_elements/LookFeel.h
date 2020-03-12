@@ -24,6 +24,8 @@ public:
 	void drawComboBox(juce::Graphics& g, int width, int height, bool,
 		int, int, int, int, juce::ComboBox& box) override;
 
+	void drawPopupMenuBackground(juce::Graphics&, int width, int height) override;
+
 private:
 
 	juce::Colour grey = juce::Colour::fromRGB(34, 34, 34);				//(34, 34, 34);

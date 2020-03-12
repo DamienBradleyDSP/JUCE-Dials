@@ -168,30 +168,6 @@ void DB::minimalGUI::ModuleSpace::paintModuleFrame(juce::Graphics& g)
 	g.drawText(module_text, text_bounds.removeFromBottom(moduleBarHeight * 2.0f), juce::Justification::centred, true);
 }
 
-void DB::minimalGUI::ModuleSpace::paintTabFrame(juce::Graphics& g)
-{
-
-	auto selectedTabSpace = innerBounds;
-	selectedTabSpace = selectedTabSpace.removeFromTop(tabHeight);
-	auto selectedTabLine = selectedTabSpace.removeFromBottom(tabStripSize);
-	
-	g.setGradientFill(
-	juce::ColourGradient::vertical(dark_grey, juce::Point<float>(selectedTabSpace.getBottomLeft()).getY(),
-								   grey,      juce::Point<float>(selectedTabSpace.getTopRight()).getY()));
-	g.fillRoundedRectangle(selectedTabSpace,tabCornerSize);
-
-	
-	auto unselectedTabLine = selectedTabSpace.removeFromBottom(tabStripSize);
-	
-
-
-	//g.setColour(dark_grey);
-	//g.fillRect(unselectedTabLine);
-
-	//if (isMouseButtonDown(false)) g.fillRect(selectedTabLine);
-
-}
-
 
 
 

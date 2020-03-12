@@ -5,6 +5,8 @@ namespace DB
 {
 namespace minimalGUI
 {
+	// Module space class with tab functionality
+	// remember to g.fillAll with each tab so that the tab beneath doesn't show
 
 class ModuleSpace : public juce::Component
 {
@@ -28,7 +30,6 @@ private:
 	void makeTabsVisible();
 	void layoutSpaces();
 	void paintModuleFrame(juce::Graphics& g);
-	void paintTabFrame(juce::Graphics& g);
 	
 
 	juce::String module_text = " ";
@@ -43,13 +44,13 @@ private:
 	const float moduleBarHeight = 25.0f;
 	const float moduleFrameThickness  = 5.0f;
 	const float moduleCornerSize = 25.0f;
-	const float moduleFontSize = 33.0f;
+	const float moduleFontSize = 26.0f;
 
 	const float tabHeight = 20.0f;
-	const float tabWidth = 180.0f;
+	const float tabWidth = 100.0f;
 	const float tabCornerSize = 10.0f;
 	const float tabStripSize = 3.0f;
-	const float tabFontSize = 13.0f;
+	const float tabFontSize = 11.0f;
 
 	juce::Colour light_grey;
 	juce::Colour grey;
